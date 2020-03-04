@@ -1,0 +1,5 @@
+pptx
+https://python-pptx.readthedocs.io/en/latest/index.html
+
+docx
+https://hackmd.io/@amostsai/SJx7_J-xN?type=view
