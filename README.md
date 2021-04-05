@@ -4,7 +4,11 @@
 ### [題庫](https://chihhsiangchien.github.io/question_database/題庫.html)
 
 
-## 統計
+### [生物科鑑別度](https://chihhsiangchien.github.io/question_database/統計_生物鑑別度.html)
+### [生物科通過率](https://chihhsiangchien.github.io/question_database/統計_生物通過率.html)
+
+
+## 其他科統計
 ### [國文科鑑別度](https://chihhsiangchien.github.io/question_database/統計_國文_鑑別度.html)
 ### [國文科通過率](https://chihhsiangchien.github.io/question_database/統計_國文_通過率.html)
 
