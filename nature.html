@@ -35,7 +35,7 @@
 
         <script type="text/javascript">
 
-            d3.csv('https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/nature.csv', function loadCallback(error, data) {
+            d3.csv('https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/nature.csv', function loadCallback(error, data) {
                 data.forEach(function(d) { // convert strings to numbers
                     d.dis = +d.dis;
                     d.pass = +d.pass;
