@@ -35,10 +35,10 @@
 
         <script type="text/javascript">
 
-            d3.csv('https://bl.ocks.org/williaster/raw/af5b855651ffe29bdca1/cereal.csv', function loadCallback(error, data) {
+            d3.csv('https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/nature.csv', function loadCallback(error, data) {
                 data.forEach(function(d) { // convert strings to numbers
-                    d.calories = +d.calories;
-                    d.sugar = +d.sugar;
+                    d.dis = +d.dis;
+                    d.pass = +d.pass;
                 });
                 makeVis(data);
             });
@@ -46,8 +46,8 @@
           var makeVis = function(data) {
               // Common pattern for defining vis size and margins
               var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-                  width  = 960 - margin.left - margin.right,
-                  height = 500 - margin.top - margin.bottom;
+                  width  = 900 - margin.left - margin.right,
+                  height = 800 - margin.top - margin.bottom;
 
               // Add the visualization svg canvas to the vis-container <div>
               var canvas = d3.select("#vis-container").append("svg")
@@ -60,13 +60,13 @@
               var colorScale = d3.scale.category10();
 
               var xScale = d3.scale.linear()
-                  .domain([ d3.min(data, function(d) { return d.sugar; }) - 1,
-                            d3.max(data, function(d) { return d.sugar; }) + 1 ])
+                  .domain([ d3.min(data, function(d) { return d.pass; }) -0.2,
+                            d3.max(data, function(d) { return d.pass; }) +0.2])
                   .range([0, width]);
 
               var yScale = d3.scale.linear()
-                  .domain([ d3.min(data, function(d) { return d.calories; }) - 1,
-                            d3.max(data, function(d) { return d.calories; }) + 1 ])
+                  .domain([ d3.min(data, function(d) { return d.dis; }) -0.2,
+                            d3.max(data, function(d) { return d.dis; }) +0.2])
                   .range([height, 0]); // flip order because y-axis origin is upper LEFT
 
               // Define our axes
@@ -88,7 +88,7 @@
                   .attr("x", width) // x-offset from the xAxis, move label all the way to the right
                   .attr("y", -6)    // y-offset from the xAxis, moves text UPWARD!
                   .style("text-anchor", "end") // right-justify text
-                  .text("Sugar");
+                  .text("通過率");
 
               // Add y-axis to the canvas
               canvas.append("g")
@@ -96,10 +96,11 @@
                   .call(yAxis)
                 .append("text")
                   .attr("class", "label")
-                  .attr("transform", "rotate(-90)") // although axis is rotated, text is not
+                  .attr("transform", "rotate(0)") // although axis is rotated, text is not
+                  .attr("x", 50) // y-offset from yAxis, moves text to the RIGHT because it's rotated, and positive y is DOWN
                   .attr("y", 15) // y-offset from yAxis, moves text to the RIGHT because it's rotated, and positive y is DOWN
                   .style("text-anchor", "end")
-                  .text("Calories");
+                  .text("鑑別度");
 
               // Add the tooltip container to the vis container
               // it's invisible and its position/contents are defined during mouseover
@@ -109,17 +110,17 @@
 
               // tooltip mouseover event handler
               var tipMouseover = function(d) {
-                  var color = colorScale(d.manufacturer);
-                  var html  = d.cereal + "<br/>" +
-                              "<span style='color:" + color + ";'>" + d.manufacturer + "</span><br/>" +
-                              "<b>" + d.sugar + "</b> sugar, <b/>" + d.calories + "</b> calories";
+                  var color = colorScale(d.year);
+                  var html  = "<font size='5'>" + d.year + "<br/>" +
+                              "<span style='color:" + color + ";'>" +  d.question +"</span><br/>" +
+                              "<b>" + "</b> 通過率, <b/>"  + d.pass +  "</b> 鑑別度:" + d.dis  + "</font>";
 
                   tooltip.html(html)
                       .style("left", (d3.event.pageX + 15) + "px")
                       .style("top", (d3.event.pageY - 28) + "px")
                     .transition()
                       .duration(200) // ms
-                      .style("opacity", .9) // started as 0!
+                      .style("opacity", 0.9) // started as 0!
 
               };
               // tooltip mouseout event handler
@@ -135,8 +136,8 @@
               .enter().append("circle")
                 .attr("class", "dot")
                 .attr("r", 5.5) // radius size, could map to another data dimension
-                .attr("cx", function(d) { return xScale( d.sugar ); })     // x position
-                .attr("cy", function(d) { return yScale( d.calories ); })  // y position
+                .attr("cx", function(d) { return xScale( d.pass ); })     // x position
+                .attr("cy", function(d) { return yScale( d.dis ); })  // y position
                 .style("fill", function(d) { return colorScale(d.manufacturer); })
                 .on("mouseover", tipMouseover)
                 .on("mouseout", tipMouseout);
