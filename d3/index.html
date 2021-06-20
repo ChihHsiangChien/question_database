@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="" />
-    <title>Data4Pak - Poverty</title>
+    <title>國中會考分析</title>
     <!-- Bootstrap -->
+    <!--           修改自  https://data4pakistan-poverty.netlify.app/" target="_blank"    -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Font-Awesome -->
     <script src="https://kit.fontawesome.com/09503a8969.js" crossorigin="anonymous"></script>
@@ -12,43 +13,33 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
+
+
   <body>
     <!-- Following this: https://www.d3-graph-gallery.com/graph/boxplot_show_individual_points.html -->
 
     <!-- NAVBAR SECTION -->    
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 
-  <a class="navbar-brand" href="#">
-    <span id = "logoText">
-      <img id="logo" src="img/noun_Pakistan_777656_v1.png" />Data Driven Pakistan</a
-    >
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-
-
-      <li class="nav-item active">
-          <a class="nav-link" href="https://sabahatpk.github.io/" target="_blank">
-            Back to Portfolio
-            <span class="sr-only">(current)</span>
-            </a>
-        </li>
-    </ul>
   </div>
 </nav>
 <!-- END of NAVBAR SECTION -->
 
     <!-- Bootstrap grid setup -->
+
     <div class="container">
       <div class="row">
         <div class="col">
+        <p>
         <h3>
           會考
         </h3>
+        </p>
+        <p>滑鼠移動到資料點上，下方會呈現題目</p>
 
       <h6>科目 
         <select id = "subjectChoice" input="dropdown">        
@@ -57,20 +48,23 @@
         <option value="math">數學</option>
         <option value="chinese">國文</option>
         <option value="english">英語</option>
-      </select> 年度 
+        
+      </select> 
+      
       <select id ="yearChoice" input="dropdown">
-        <option value="all">所有年度</option>
+        
         <option value="110">110</option>
         <option value="109">109</option>
         <option value="108">108</option>
         <option value="107">107</option>
         <option value="106">106</option>
         <option value="105">105</option>
-        <option value="104">104</option>        
-        <option value="103">103</option>    
+        <option value="104">104</option>          
                                                
-        
-      </select>?</h6>
+       
+      </select>
+      年度
+      </h6>
     </div>
  
       
@@ -89,17 +83,11 @@
       </div>
 
       <!-- Beginning of footer -->
+     <div id="vis-container"></div>
       <div class="row">
         <div class="col">
-          <h4 id="Footnote1">
-            About This Dashboard:
-          </h4>
-          <p>
-          修改自
-          <a href="https://data4pakistan-poverty.netlify.app/" target="_blank"
-            >Data Driven Pakistan</a>
-           
-          </p>
+
+
          
           
 
