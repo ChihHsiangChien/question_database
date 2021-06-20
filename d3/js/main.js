@@ -157,14 +157,15 @@ function updateChart(someData, subject, time, year) {
       return d["year"];
     })
     .entries(someData[4]);
-
+    
+    
   questionsData = [dataNature,dataSoceity,dataMath,dataChinese,dataEnglish];
-
 
   time = year - 104;
 
   
   let filteredData = questionsData[subject][time]["values"];
+
 
 
   timeText.text( 104 + time + "年度" );

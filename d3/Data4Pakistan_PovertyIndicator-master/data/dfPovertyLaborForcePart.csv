@@ -1,0 +1,703 @@
+Province,District,Year,Poverty Rate (%),"Labor force participation rate (% of working age population, 15-64 years old)"
+Balochistan,Awaran,2004-01-01,57.0,71.72
+Balochistan,Awaran,2006-01-01,69.0,62.62
+Balochistan,Awaran,2008-01-01,83.0,50.48
+Balochistan,Awaran,2010-01-01,42.0,61.93
+Balochistan,Awaran,2012-01-01,68.0,53.25
+Balochistan,Awaran,2014-01-01,57.0,67.62
+Balochistan,Barkhan,2004-01-01,61.0,52.1
+Balochistan,Barkhan,2006-01-01,76.0,48.08
+Balochistan,Barkhan,2008-01-01,82.0,51.72
+Balochistan,Barkhan,2010-01-01,64.0,35.63
+Balochistan,Barkhan,2012-01-01,51.0,46.97
+Balochistan,Barkhan,2014-01-01,59.0,48.39
+Balochistan,Chagai,2004-01-01,74.0,41.3
+Balochistan,Chagai,2006-01-01,82.0,40.57
+Balochistan,Chagai,2008-01-01,74.0,42.6
+Balochistan,Chagai,2010-01-01,56.0,45.21
+Balochistan,Chagai,2012-01-01,53.0,45.54
+Balochistan,Chagai,2014-01-01,58.0,50.02
+Balochistan,Dera Bugti,2006-01-01,81.0,60.14
+Balochistan,Dera Bugti,2008-01-01,85.0,61.66
+Balochistan,Dera Bugti,2010-01-01,64.0,61.75
+Balochistan,Dera Bugti,2012-01-01,64.0,61.69
+Balochistan,Dera Bugti,2014-01-01,68.0,43.16
+Balochistan,Gwadar,2004-01-01,49.0,48.33
+Balochistan,Gwadar,2006-01-01,59.0,46.59
+Balochistan,Gwadar,2008-01-01,71.0,42.93
+Balochistan,Gwadar,2010-01-01,50.0,51.09
+Balochistan,Gwadar,2012-01-01,35.0,49.59
+Balochistan,Gwadar,2014-01-01,47.0,44.38
+Balochistan,Harnai,2004-01-01,66.0,45.48
+Balochistan,Harnai,2006-01-01,77.0,42.77
+Balochistan,Harnai,2008-01-01,64.0,42.44
+Balochistan,Harnai,2010-01-01,19.0,50.02
+Balochistan,Harnai,2012-01-01,35.0,45.9
+Balochistan,Harnai,2014-01-01,65.0,43.31
+Balochistan,Jaffarabad,2004-01-01,49.0,60.16
+Balochistan,Jaffarabad,2006-01-01,73.0,70.94
+Balochistan,Jaffarabad,2008-01-01,80.0,61.54
+Balochistan,Jaffarabad,2010-01-01,64.0,53.05
+Balochistan,Jaffarabad,2012-01-01,62.0,54.72
+Balochistan,Jaffarabad,2014-01-01,64.0,59.46
+Balochistan,Jhal Magsi,2004-01-01,71.0,46.22
+Balochistan,Jhal Magsi,2006-01-01,86.0,47.64
+Balochistan,Jhal Magsi,2008-01-01,81.0,50.42
+Balochistan,Jhal Magsi,2010-01-01,56.0,47.35
+Balochistan,Jhal Magsi,2012-01-01,46.0,46.3
+Balochistan,Jhal Magsi,2014-01-01,65.0,48.67
+Balochistan,Kachhi,2004-01-01,64.0,44.38
+Balochistan,Kachhi,2006-01-01,76.0,43.56
+Balochistan,Kachhi,2008-01-01,84.0,48.96
+Balochistan,Kachhi,2010-01-01,55.0,53.62
+Balochistan,Kachhi,2012-01-01,49.0,46.19
+Balochistan,Kachhi,2014-01-01,57.0,48.1
+Balochistan,Kalat,2004-01-01,52.0,61.62
+Balochistan,Kalat,2006-01-01,74.0,68.6
+Balochistan,Kalat,2008-01-01,83.0,57.78
+Balochistan,Kalat,2010-01-01,42.0,64.18
+Balochistan,Kalat,2012-01-01,50.0,62.9
+Balochistan,Kalat,2014-01-01,44.0,76.28
+Balochistan,Kech,2004-01-01,51.0,44.28
+Balochistan,Kech,2006-01-01,62.0,43.72
+Balochistan,Kech,2008-01-01,71.0,48.15
+Balochistan,Kech,2010-01-01,55.0,53.94
+Balochistan,Kech,2012-01-01,46.0,45.46
+Balochistan,Kharan,2004-01-01,60.0,51.06
+Balochistan,Kharan,2006-01-01,68.0,47.72
+Balochistan,Kharan,2008-01-01,75.0,46.29
+Balochistan,Kharan,2010-01-01,56.0,53.24
+Balochistan,Kharan,2012-01-01,50.0,45.12
+Balochistan,Kharan,2014-01-01,58.0,44.59
+Balochistan,Khuzdar,2004-01-01,55.0,63.0
+Balochistan,Khuzdar,2006-01-01,77.0,59.16
+Balochistan,Khuzdar,2008-01-01,77.0,52.02
+Balochistan,Khuzdar,2010-01-01,45.0,55.5
+Balochistan,Khuzdar,2012-01-01,46.0,63.45
+Balochistan,Khuzdar,2014-01-01,49.0,81.65
+Balochistan,Killa Abdullah,2004-01-01,65.0,43.12
+Balochistan,Killa Abdullah,2006-01-01,88.0,42.27
+Balochistan,Killa Abdullah,2008-01-01,62.0,41.36
+Balochistan,Killa Abdullah,2010-01-01,33.0,50.96
+Balochistan,Killa Abdullah,2012-01-01,51.0,45.39
+Balochistan,Killa Abdullah,2014-01-01,66.0,45.36
+Balochistan,Killa Saifullah,2004-01-01,66.0,49.07
+Balochistan,Killa Saifullah,2006-01-01,80.0,42.96
+Balochistan,Killa Saifullah,2008-01-01,73.0,47.21
+Balochistan,Killa Saifullah,2010-01-01,48.0,49.73
+Balochistan,Killa Saifullah,2012-01-01,46.0,47.99
+Balochistan,Killa Saifullah,2014-01-01,46.0,41.29
+Balochistan,Kohlu,2006-01-01,83.0,51.87
+Balochistan,Kohlu,2008-01-01,87.0,31.94
+Balochistan,Kohlu,2010-01-01,51.0,51.63
+Balochistan,Kohlu,2012-01-01,49.0,48.42
+Balochistan,Kohlu,2014-01-01,61.0,66.45
+Balochistan,Las Bela,2004-01-01,65.0,48.48
+Balochistan,Las Bela,2006-01-01,79.0,48.03
+Balochistan,Las Bela,2008-01-01,76.0,47.34
+Balochistan,Las Bela,2010-01-01,55.0,43.48
+Balochistan,Las Bela,2012-01-01,41.0,45.64
+Balochistan,Las Bela,2014-01-01,53.0,45.29
+Balochistan,Lehri,2004-01-01,66.0,45.48
+Balochistan,Lehri,2006-01-01,77.0,42.77
+Balochistan,Lehri,2008-01-01,64.0,42.44
+Balochistan,Lehri,2010-01-01,31.0,44.66
+Balochistan,Lehri,2012-01-01,30.0,45.14
+Balochistan,Lehri,2014-01-01,49.0,49.53
+Balochistan,Loralai,2004-01-01,64.0,46.0
+Balochistan,Loralai,2006-01-01,79.0,48.87
+Balochistan,Loralai,2008-01-01,71.0,36.41
+Balochistan,Loralai,2010-01-01,60.0,45.35
+Balochistan,Loralai,2012-01-01,28.0,47.3
+Balochistan,Loralai,2014-01-01,51.0,48.74
+Balochistan,Mastung,2004-01-01,53.0,45.25
+Balochistan,Mastung,2006-01-01,69.0,48.28
+Balochistan,Mastung,2008-01-01,82.0,57.28
+Balochistan,Mastung,2010-01-01,37.0,52.67
+Balochistan,Mastung,2012-01-01,44.0,61.37
+Balochistan,Mastung,2014-01-01,50.0,72.01
+Balochistan,Musakhel,2004-01-01,67.0,52.45
+Balochistan,Musakhel,2006-01-01,83.0,48.73
+Balochistan,Musakhel,2008-01-01,85.0,48.12
+Balochistan,Musakhel,2010-01-01,66.0,48.82
+Balochistan,Musakhel,2012-01-01,37.0,50.58
+Balochistan,Musakhel,2014-01-01,53.0,50.62
+Balochistan,Nasirabad,2004-01-01,62.0,66.78
+Balochistan,Nasirabad,2006-01-01,77.0,80.12
+Balochistan,Nasirabad,2008-01-01,82.0,65.33
+Balochistan,Nasirabad,2010-01-01,66.0,53.02
+Balochistan,Nasirabad,2012-01-01,61.0,56.02
+Balochistan,Nasirabad,2014-01-01,61.0,69.14
+Balochistan,Nushki,2004-01-01,74.0,41.3
+Balochistan,Nushki,2006-01-01,82.0,40.57
+Balochistan,Nushki,2008-01-01,74.0,43.76
+Balochistan,Nushki,2010-01-01,53.0,47.04
+Balochistan,Nushki,2012-01-01,48.0,42.79
+Balochistan,Nushki,2014-01-01,47.0,45.14
+Balochistan,Panjgur,2004-01-01,58.0,42.73
+Balochistan,Panjgur,2006-01-01,72.0,47.27
+Balochistan,Panjgur,2008-01-01,72.0,44.58
+Balochistan,Panjgur,2010-01-01,60.0,61.34
+Balochistan,Pishin,2004-01-01,71.0,37.18
+Balochistan,Pishin,2006-01-01,81.0,39.87
+Balochistan,Pishin,2008-01-01,55.0,41.47
+Balochistan,Pishin,2010-01-01,23.0,54.49
+Balochistan,Pishin,2012-01-01,43.0,42.53
+Balochistan,Pishin,2014-01-01,54.0,44.48
+Balochistan,Quetta,2004-01-01,46.0,39.71
+Balochistan,Quetta,2006-01-01,53.0,40.79
+Balochistan,Quetta,2008-01-01,55.0,39.32
+Balochistan,Quetta,2010-01-01,21.0,46.36
+Balochistan,Quetta,2012-01-01,22.0,40.57
+Balochistan,Quetta,2014-01-01,41.0,42.36
+Balochistan,Sheerani,2004-01-01,71.0,44.41
+Balochistan,Sheerani,2006-01-01,76.0,44.37
+Balochistan,Sheerani,2008-01-01,73.0,42.19
+Balochistan,Sheerani,2010-01-01,45.0,58.32
+Balochistan,Sheerani,2012-01-01,41.0,39.16
+Balochistan,Sheerani,2014-01-01,59.0,49.5
+Balochistan,Sibi,2004-01-01,66.0,45.48
+Balochistan,Sibi,2006-01-01,77.0,42.77
+Balochistan,Sibi,2008-01-01,64.0,42.44
+Balochistan,Sibi,2010-01-01,31.0,44.66
+Balochistan,Sibi,2012-01-01,30.0,45.14
+Balochistan,Sibi,2014-01-01,49.0,49.53
+Balochistan,Sohbatpur,2004-01-01,49.0,60.16
+Balochistan,Sohbatpur,2006-01-01,73.0,70.94
+Balochistan,Sohbatpur,2008-01-01,80.0,61.54
+Balochistan,Sohbatpur,2010-01-01,64.0,53.05
+Balochistan,Sohbatpur,2012-01-01,62.0,54.72
+Balochistan,Sohbatpur,2014-01-01,64.0,59.46
+Balochistan,Washuk,2004-01-01,60.0,51.06
+Balochistan,Washuk,2006-01-01,68.0,47.72
+Balochistan,Washuk,2008-01-01,81.0,50.11
+Balochistan,Washuk,2010-01-01,53.0,51.27
+Balochistan,Washuk,2012-01-01,58.0,56.72
+Balochistan,Washuk,2014-01-01,64.0,69.91
+Balochistan,Zhob,2004-01-01,71.0,44.41
+Balochistan,Zhob,2006-01-01,76.0,44.37
+Balochistan,Zhob,2008-01-01,73.0,42.19
+Balochistan,Zhob,2010-01-01,55.0,57.39
+Balochistan,Zhob,2012-01-01,40.0,40.24
+Balochistan,Zhob,2014-01-01,54.0,43.17
+Balochistan,Ziarat,2004-01-01,67.0,42.87
+Balochistan,Ziarat,2006-01-01,79.0,40.81
+Balochistan,Ziarat,2008-01-01,54.0,36.94
+Balochistan,Ziarat,2010-01-01,34.0,56.86
+Balochistan,Ziarat,2012-01-01,32.0,45.47
+Balochistan,Ziarat,2014-01-01,64.0,44.55
+Federal Capital Territory,Islamabad,2004-01-01,21.0,39.96
+Federal Capital Territory,Islamabad,2006-01-01,12.0,38.97
+Federal Capital Territory,Islamabad,2008-01-01,9.0,43.17
+Federal Capital Territory,Islamabad,2010-01-01,13.0,47.8
+Federal Capital Territory,Islamabad,2014-01-01,8.0,43.36
+Khyber Pakhtunkhwa,Abbottabad,2004-01-01,51.0,38.3
+Khyber Pakhtunkhwa,Abbottabad,2006-01-01,47.0,45.1
+Khyber Pakhtunkhwa,Abbottabad,2008-01-01,35.0,32.5
+Khyber Pakhtunkhwa,Abbottabad,2010-01-01,28.0,39.65
+Khyber Pakhtunkhwa,Abbottabad,2012-01-01,18.0,32.99
+Khyber Pakhtunkhwa,Abbottabad,2014-01-01,12.0,32.08
+Khyber Pakhtunkhwa,Bannu,2004-01-01,60.0,37.19
+Khyber Pakhtunkhwa,Bannu,2006-01-01,59.0,36.08
+Khyber Pakhtunkhwa,Bannu,2008-01-01,45.0,36.69
+Khyber Pakhtunkhwa,Bannu,2010-01-01,43.0,45.58
+Khyber Pakhtunkhwa,Bannu,2012-01-01,46.0,37.38
+Khyber Pakhtunkhwa,Bannu,2014-01-01,28.0,35.04
+Khyber Pakhtunkhwa,Batagram,2004-01-01,72.0,40.85
+Khyber Pakhtunkhwa,Batagram,2006-01-01,71.0,38.53
+Khyber Pakhtunkhwa,Batagram,2008-01-01,46.0,39.49
+Khyber Pakhtunkhwa,Batagram,2010-01-01,40.0,42.15
+Khyber Pakhtunkhwa,Batagram,2012-01-01,34.0,45.2
+Khyber Pakhtunkhwa,Batagram,2014-01-01,32.0,53.71
+Khyber Pakhtunkhwa,Buner,2004-01-01,75.0,41.46
+Khyber Pakhtunkhwa,Buner,2006-01-01,74.0,34.14
+Khyber Pakhtunkhwa,Buner,2008-01-01,52.0,33.79
+Khyber Pakhtunkhwa,Buner,2010-01-01,56.0,33.8
+Khyber Pakhtunkhwa,Buner,2012-01-01,46.0,31.95
+Khyber Pakhtunkhwa,Buner,2014-01-01,42.0,28.32
+Khyber Pakhtunkhwa,Charsadda,2004-01-01,64.0,39.46
+Khyber Pakhtunkhwa,Charsadda,2006-01-01,62.0,41.84
+Khyber Pakhtunkhwa,Charsadda,2008-01-01,47.0,41.2
+Khyber Pakhtunkhwa,Charsadda,2010-01-01,47.0,37.88
+Khyber Pakhtunkhwa,Charsadda,2012-01-01,35.0,37.99
+Khyber Pakhtunkhwa,Charsadda,2014-01-01,28.0,35.97
+Khyber Pakhtunkhwa,Chitral,2004-01-01,61.0,48.96
+Khyber Pakhtunkhwa,Chitral,2006-01-01,56.0,52.21
+Khyber Pakhtunkhwa,Chitral,2008-01-01,39.0,44.97
+Khyber Pakhtunkhwa,Chitral,2010-01-01,32.0,51.55
+Khyber Pakhtunkhwa,Chitral,2012-01-01,25.0,40.93
+Khyber Pakhtunkhwa,Chitral,2014-01-01,15.0,38.92
+Khyber Pakhtunkhwa,Dera Ismail Khan,2004-01-01,61.0,43.56
+Khyber Pakhtunkhwa,Dera Ismail Khan,2006-01-01,59.0,41.1
+Khyber Pakhtunkhwa,Dera Ismail Khan,2008-01-01,48.0,41.34
+Khyber Pakhtunkhwa,Dera Ismail Khan,2010-01-01,47.0,44.14
+Khyber Pakhtunkhwa,Dera Ismail Khan,2012-01-01,39.0,43.24
+Khyber Pakhtunkhwa,Dera Ismail Khan,2014-01-01,33.0,42.07
+Khyber Pakhtunkhwa,Hangu,2004-01-01,62.0,34.26
+Khyber Pakhtunkhwa,Hangu,2006-01-01,65.0,29.16
+Khyber Pakhtunkhwa,Hangu,2008-01-01,47.0,32.46
+Khyber Pakhtunkhwa,Hangu,2010-01-01,45.0,30.34
+Khyber Pakhtunkhwa,Hangu,2012-01-01,33.0,26.81
+Khyber Pakhtunkhwa,Hangu,2014-01-01,28.0,27.76
+Khyber Pakhtunkhwa,Haripur,2004-01-01,55.0,45.4
+Khyber Pakhtunkhwa,Haripur,2006-01-01,50.0,44.21
+Khyber Pakhtunkhwa,Haripur,2008-01-01,37.0,46.08
+Khyber Pakhtunkhwa,Haripur,2010-01-01,25.0,42.08
+Khyber Pakhtunkhwa,Haripur,2012-01-01,15.0,41.21
+Khyber Pakhtunkhwa,Haripur,2014-01-01,16.0,45.57
+Khyber Pakhtunkhwa,Karak,2004-01-01,63.0,29.14
+Khyber Pakhtunkhwa,Karak,2006-01-01,61.0,22.93
+Khyber Pakhtunkhwa,Karak,2008-01-01,46.0,20.37
+Khyber Pakhtunkhwa,Karak,2010-01-01,46.0,28.8
+Khyber Pakhtunkhwa,Karak,2012-01-01,40.0,28.59
+Khyber Pakhtunkhwa,Karak,2014-01-01,25.0,31.27
+Khyber Pakhtunkhwa,Kohat,2004-01-01,61.0,33.42
+Khyber Pakhtunkhwa,Kohat,2006-01-01,59.0,33.93
+Khyber Pakhtunkhwa,Kohat,2008-01-01,44.0,33.11
+Khyber Pakhtunkhwa,Kohat,2010-01-01,41.0,34.45
+Khyber Pakhtunkhwa,Kohat,2012-01-01,32.0,31.65
+Khyber Pakhtunkhwa,Kohat,2014-01-01,27.0,30.35
+Khyber Pakhtunkhwa,Kohistan,2004-01-01,78.0,54.11
+Khyber Pakhtunkhwa,Kohistan,2006-01-01,69.0,40.89
+Khyber Pakhtunkhwa,Kohistan,2008-01-01,51.0,61.0
+Khyber Pakhtunkhwa,Kohistan,2010-01-01,51.0,48.99
+Khyber Pakhtunkhwa,Kohistan,2012-01-01,37.0,60.37
+Khyber Pakhtunkhwa,Kohistan,2014-01-01,36.0,66.01
+Khyber Pakhtunkhwa,Lakki Marwat,2004-01-01,66.0,38.17
+Khyber Pakhtunkhwa,Lakki Marwat,2006-01-01,67.0,41.42
+Khyber Pakhtunkhwa,Lakki Marwat,2008-01-01,47.0,35.8
+Khyber Pakhtunkhwa,Lakki Marwat,2010-01-01,47.0,50.06
+Khyber Pakhtunkhwa,Lakki Marwat,2012-01-01,49.0,40.63
+Khyber Pakhtunkhwa,Lakki Marwat,2014-01-01,28.0,38.28
+Khyber Pakhtunkhwa,Lower Dir,2004-01-01,55.0,39.33
+Khyber Pakhtunkhwa,Lower Dir,2006-01-01,62.0,36.7
+Khyber Pakhtunkhwa,Lower Dir,2008-01-01,46.0,34.41
+Khyber Pakhtunkhwa,Lower Dir,2010-01-01,44.0,35.49
+Khyber Pakhtunkhwa,Lower Dir,2012-01-01,41.0,43.62
+Khyber Pakhtunkhwa,Lower Dir,2014-01-01,29.0,30.38
+Khyber Pakhtunkhwa,Malakand PA,2004-01-01,63.0,38.85
+Khyber Pakhtunkhwa,Malakand PA,2006-01-01,65.0,35.58
+Khyber Pakhtunkhwa,Malakand PA,2008-01-01,44.0,34.96
+Khyber Pakhtunkhwa,Malakand PA,2010-01-01,43.0,35.46
+Khyber Pakhtunkhwa,Malakand PA,2012-01-01,29.0,30.75
+Khyber Pakhtunkhwa,Malakand PA,2014-01-01,22.0,33.33
+Khyber Pakhtunkhwa,Mansehra,2004-01-01,65.0,40.09
+Khyber Pakhtunkhwa,Mansehra,2006-01-01,63.0,43.63
+Khyber Pakhtunkhwa,Mansehra,2008-01-01,41.0,45.66
+Khyber Pakhtunkhwa,Mansehra,2010-01-01,36.0,44.11
+Khyber Pakhtunkhwa,Mansehra,2012-01-01,23.0,43.37
+Khyber Pakhtunkhwa,Mansehra,2014-01-01,17.0,37.43
+Khyber Pakhtunkhwa,Mardan,2004-01-01,66.0,34.95
+Khyber Pakhtunkhwa,Mardan,2006-01-01,65.0,37.74
+Khyber Pakhtunkhwa,Mardan,2008-01-01,47.0,35.55
+Khyber Pakhtunkhwa,Mardan,2010-01-01,46.0,36.87
+Khyber Pakhtunkhwa,Mardan,2012-01-01,33.0,35.27
+Khyber Pakhtunkhwa,Mardan,2014-01-01,27.0,33.91
+Khyber Pakhtunkhwa,Nowshera,2004-01-01,60.0,34.95
+Khyber Pakhtunkhwa,Nowshera,2006-01-01,58.0,33.22
+Khyber Pakhtunkhwa,Nowshera,2008-01-01,44.0,37.16
+Khyber Pakhtunkhwa,Nowshera,2010-01-01,43.0,36.17
+Khyber Pakhtunkhwa,Nowshera,2012-01-01,30.0,32.88
+Khyber Pakhtunkhwa,Nowshera,2014-01-01,22.0,37.89
+Khyber Pakhtunkhwa,Peshawar,2004-01-01,54.0,40.06
+Khyber Pakhtunkhwa,Peshawar,2006-01-01,59.0,40.59
+Khyber Pakhtunkhwa,Peshawar,2008-01-01,40.0,40.48
+Khyber Pakhtunkhwa,Peshawar,2010-01-01,40.0,39.58
+Khyber Pakhtunkhwa,Peshawar,2012-01-01,23.0,38.92
+Khyber Pakhtunkhwa,Peshawar,2014-01-01,23.0,38.57
+Khyber Pakhtunkhwa,Shangla,2004-01-01,71.0,40.66
+Khyber Pakhtunkhwa,Shangla,2006-01-01,70.0,42.0
+Khyber Pakhtunkhwa,Shangla,2008-01-01,47.0,43.21
+Khyber Pakhtunkhwa,Shangla,2010-01-01,52.0,39.33
+Khyber Pakhtunkhwa,Shangla,2012-01-01,54.0,37.92
+Khyber Pakhtunkhwa,Shangla,2014-01-01,32.0,41.92
+Khyber Pakhtunkhwa,Swabi,2004-01-01,64.0,33.3
+Khyber Pakhtunkhwa,Swabi,2006-01-01,64.0,33.82
+Khyber Pakhtunkhwa,Swabi,2008-01-01,45.0,34.91
+Khyber Pakhtunkhwa,Swabi,2010-01-01,36.0,31.29
+Khyber Pakhtunkhwa,Swabi,2012-01-01,29.0,30.84
+Khyber Pakhtunkhwa,Swabi,2014-01-01,19.0,31.74
+Khyber Pakhtunkhwa,Swat,2004-01-01,58.0,37.82
+Khyber Pakhtunkhwa,Swat,2006-01-01,58.0,36.29
+Khyber Pakhtunkhwa,Swat,2008-01-01,48.0,52.25
+Khyber Pakhtunkhwa,Swat,2010-01-01,45.0,44.32
+Khyber Pakhtunkhwa,Swat,2012-01-01,40.0,32.84
+Khyber Pakhtunkhwa,Swat,2014-01-01,29.0,36.27
+Khyber Pakhtunkhwa,Tank,2004-01-01,63.0,37.73
+Khyber Pakhtunkhwa,Tank,2006-01-01,66.0,36.71
+Khyber Pakhtunkhwa,Tank,2008-01-01,47.0,39.89
+Khyber Pakhtunkhwa,Tank,2010-01-01,48.0,40.6
+Khyber Pakhtunkhwa,Tank,2012-01-01,42.0,37.7
+Khyber Pakhtunkhwa,Tank,2014-01-01,39.0,37.52
+Khyber Pakhtunkhwa,Tor Ghar,2004-01-01,65.0,40.09
+Khyber Pakhtunkhwa,Tor Ghar,2006-01-01,63.0,43.63
+Khyber Pakhtunkhwa,Tor Ghar,2008-01-01,41.0,45.66
+Khyber Pakhtunkhwa,Tor Ghar,2010-01-01,36.0,44.11
+Khyber Pakhtunkhwa,Tor Ghar,2012-01-01,36.0,68.55
+Khyber Pakhtunkhwa,Tor Ghar,2014-01-01,38.0,61.89
+Khyber Pakhtunkhwa,Upper Dir,2004-01-01,74.0,44.03
+Khyber Pakhtunkhwa,Upper Dir,2006-01-01,70.0,47.28
+Khyber Pakhtunkhwa,Upper Dir,2008-01-01,49.0,42.37
+Khyber Pakhtunkhwa,Upper Dir,2010-01-01,48.0,52.05
+Khyber Pakhtunkhwa,Upper Dir,2012-01-01,50.0,47.35
+Khyber Pakhtunkhwa,Upper Dir,2014-01-01,35.0,60.49
+Punjab,Attock,2004-01-01,41.0,41.05
+Punjab,Attock,2006-01-01,32.0,39.44
+Punjab,Attock,2008-01-01,29.0,36.4
+Punjab,Attock,2010-01-01,27.0,40.35
+Punjab,Attock,2012-01-01,20.0,36.68
+Punjab,Attock,2014-01-01,14.0,41.42
+Punjab,Bahawalnagar,2004-01-01,53.0,60.54
+Punjab,Bahawalnagar,2006-01-01,52.0,60.94
+Punjab,Bahawalnagar,2008-01-01,47.0,65.2
+Punjab,Bahawalnagar,2010-01-01,36.0,59.73
+Punjab,Bahawalnagar,2012-01-01,31.0,56.38
+Punjab,Bahawalnagar,2014-01-01,31.0,60.24
+Punjab,Bahawalpur,2004-01-01,59.0,53.94
+Punjab,Bahawalpur,2006-01-01,58.0,54.02
+Punjab,Bahawalpur,2008-01-01,50.0,59.5
+Punjab,Bahawalpur,2010-01-01,42.0,65.42
+Punjab,Bahawalpur,2012-01-01,38.0,66.31
+Punjab,Bahawalpur,2014-01-01,33.0,66.65
+Punjab,Bhakkar,2004-01-01,49.0,46.66
+Punjab,Bhakkar,2006-01-01,48.0,42.98
+Punjab,Bhakkar,2008-01-01,46.0,41.28
+Punjab,Bhakkar,2010-01-01,37.0,48.79
+Punjab,Bhakkar,2012-01-01,34.0,55.07
+Punjab,Bhakkar,2014-01-01,29.0,49.26
+Punjab,Chakwal,2004-01-01,29.0,34.65
+Punjab,Chakwal,2006-01-01,24.0,40.02
+Punjab,Chakwal,2008-01-01,19.0,44.65
+Punjab,Chakwal,2010-01-01,17.0,37.76
+Punjab,Chakwal,2012-01-01,13.0,41.64
+Punjab,Chakwal,2014-01-01,12.0,42.26
+Punjab,Chiniot,2004-01-01,56.0,60.83
+Punjab,Chiniot,2006-01-01,56.0,52.84
+Punjab,Chiniot,2008-01-01,45.0,58.73
+Punjab,Chiniot,2010-01-01,34.0,50.85
+Punjab,Chiniot,2012-01-01,26.0,47.85
+Punjab,Chiniot,2014-01-01,29.0,51.56
+Punjab,Dera Ghazi Khan,2004-01-01,62.0,50.32
+Punjab,Dera Ghazi Khan,2006-01-01,54.0,46.77
+Punjab,Dera Ghazi Khan,2008-01-01,57.0,47.74
+Punjab,Dera Ghazi Khan,2010-01-01,53.0,60.01
+Punjab,Dera Ghazi Khan,2012-01-01,42.0,51.06
+Punjab,Dera Ghazi Khan,2014-01-01,40.0,60.15
+Punjab,Faisalabad,2004-01-01,46.0,50.47
+Punjab,Faisalabad,2006-01-01,40.0,48.55
+Punjab,Faisalabad,2008-01-01,35.0,44.91
+Punjab,Faisalabad,2010-01-01,25.0,46.76
+Punjab,Faisalabad,2012-01-01,21.0,45.93
+Punjab,Faisalabad,2014-01-01,19.0,45.61
+Punjab,Gujranwala,2004-01-01,44.0,43.18
+Punjab,Gujranwala,2006-01-01,38.0,42.61
+Punjab,Gujranwala,2008-01-01,27.0,40.08
+Punjab,Gujranwala,2010-01-01,25.0,42.56
+Punjab,Gujranwala,2012-01-01,21.0,41.12
+Punjab,Gujranwala,2014-01-01,18.0,41.52
+Punjab,Gujrat,2004-01-01,39.0,40.1
+Punjab,Gujrat,2006-01-01,31.0,36.32
+Punjab,Gujrat,2008-01-01,23.0,37.36
+Punjab,Gujrat,2010-01-01,25.0,37.51
+Punjab,Gujrat,2012-01-01,16.0,41.76
+Punjab,Gujrat,2014-01-01,15.0,36.23
+Punjab,Hafizabad,2004-01-01,51.0,47.34
+Punjab,Hafizabad,2006-01-01,47.0,44.18
+Punjab,Hafizabad,2008-01-01,37.0,44.59
+Punjab,Hafizabad,2010-01-01,29.0,45.12
+Punjab,Hafizabad,2012-01-01,23.0,42.65
+Punjab,Hafizabad,2014-01-01,24.0,43.25
+Punjab,Jhang,2004-01-01,56.0,60.83
+Punjab,Jhang,2006-01-01,56.0,52.84
+Punjab,Jhang,2008-01-01,45.0,58.73
+Punjab,Jhang,2010-01-01,35.0,54.08
+Punjab,Jhang,2012-01-01,29.0,64.03
+Punjab,Jhang,2014-01-01,28.0,64.82
+Punjab,Jhelum,2004-01-01,33.0,43.33
+Punjab,Jhelum,2006-01-01,25.0,38.73
+Punjab,Jhelum,2008-01-01,20.0,40.32
+Punjab,Jhelum,2010-01-01,22.0,40.61
+Punjab,Jhelum,2012-01-01,12.0,38.37
+Punjab,Jhelum,2014-01-01,12.0,40.42
+Punjab,Kasur,2004-01-01,57.0,49.24
+Punjab,Kasur,2006-01-01,51.0,50.72
+Punjab,Kasur,2008-01-01,45.0,50.7
+Punjab,Kasur,2010-01-01,36.0,49.69
+Punjab,Kasur,2012-01-01,33.0,51.71
+Punjab,Kasur,2014-01-01,28.0,52.51
+Punjab,Khanewal,2004-01-01,58.0,57.54
+Punjab,Khanewal,2006-01-01,56.0,54.2
+Punjab,Khanewal,2008-01-01,47.0,58.44
+Punjab,Khanewal,2010-01-01,36.0,62.13
+Punjab,Khanewal,2012-01-01,33.0,55.58
+Punjab,Khanewal,2014-01-01,27.0,57.17
+Punjab,Khushab,2004-01-01,50.0,39.08
+Punjab,Khushab,2006-01-01,40.0,43.47
+Punjab,Khushab,2008-01-01,35.0,39.06
+Punjab,Khushab,2010-01-01,26.0,38.76
+Punjab,Khushab,2012-01-01,24.0,39.55
+Punjab,Khushab,2014-01-01,21.0,41.45
+Punjab,Lahore,2004-01-01,30.0,45.22
+Punjab,Lahore,2006-01-01,28.0,44.21
+Punjab,Lahore,2008-01-01,20.0,43.4
+Punjab,Lahore,2010-01-01,21.0,43.99
+Punjab,Lahore,2012-01-01,15.0,44.89
+Punjab,Lahore,2014-01-01,13.0,46.39
+Punjab,Layyah,2004-01-01,59.0,60.84
+Punjab,Layyah,2006-01-01,50.0,48.07
+Punjab,Layyah,2008-01-01,47.0,55.17
+Punjab,Layyah,2010-01-01,45.0,65.61
+Punjab,Layyah,2012-01-01,32.0,64.29
+Punjab,Layyah,2014-01-01,27.0,63.51
+Punjab,Lodhran,2004-01-01,62.0,59.09
+Punjab,Lodhran,2006-01-01,59.0,53.64
+Punjab,Lodhran,2008-01-01,46.0,56.8
+Punjab,Lodhran,2010-01-01,39.0,64.2
+Punjab,Lodhran,2012-01-01,35.0,61.94
+Punjab,Lodhran,2014-01-01,31.0,64.11
+Punjab,Mandi Bahauddin,2004-01-01,48.0,44.39
+Punjab,Mandi Bahauddin,2006-01-01,39.0,41.05
+Punjab,Mandi Bahauddin,2008-01-01,29.0,37.95
+Punjab,Mandi Bahauddin,2010-01-01,26.0,42.54
+Punjab,Mandi Bahauddin,2012-01-01,16.0,38.17
+Punjab,Mandi Bahauddin,2014-01-01,23.0,40.73
+Punjab,Mianwali,2004-01-01,44.0,41.17
+Punjab,Mianwali,2006-01-01,38.0,42.48
+Punjab,Mianwali,2008-01-01,41.0,40.08
+Punjab,Mianwali,2010-01-01,33.0,46.77
+Punjab,Mianwali,2012-01-01,30.0,45.06
+Punjab,Mianwali,2014-01-01,22.0,43.07
+Punjab,Multan,2004-01-01,57.0,53.28
+Punjab,Multan,2006-01-01,51.0,55.39
+Punjab,Multan,2008-01-01,42.0,54.88
+Punjab,Multan,2010-01-01,37.0,52.68
+Punjab,Multan,2012-01-01,33.0,51.78
+Punjab,Multan,2014-01-01,27.0,54.88
+Punjab,Muzaffargarh,2004-01-01,68.0,59.51
+Punjab,Muzaffargarh,2006-01-01,66.0,63.9
+Punjab,Muzaffargarh,2008-01-01,59.0,59.75
+Punjab,Muzaffargarh,2010-01-01,50.0,63.6
+Punjab,Muzaffargarh,2012-01-01,42.0,61.75
+Punjab,Muzaffargarh,2014-01-01,38.0,58.08
+Punjab,Nankana Sahib,2004-01-01,52.0,48.58
+Punjab,Nankana Sahib,2006-01-01,47.0,47.66
+Punjab,Nankana Sahib,2008-01-01,40.0,51.97
+Punjab,Nankana Sahib,2010-01-01,32.0,47.09
+Punjab,Nankana Sahib,2012-01-01,25.0,42.85
+Punjab,Nankana Sahib,2014-01-01,22.0,43.98
+Punjab,Narowal,2004-01-01,53.0,45.55
+Punjab,Narowal,2006-01-01,49.0,43.96
+Punjab,Narowal,2008-01-01,41.0,40.81
+Punjab,Narowal,2010-01-01,31.0,40.36
+Punjab,Narowal,2012-01-01,25.0,44.32
+Punjab,Narowal,2014-01-01,21.0,37.68
+Punjab,Okara,2004-01-01,56.0,55.99
+Punjab,Okara,2006-01-01,55.0,57.92
+Punjab,Okara,2008-01-01,45.0,59.0
+Punjab,Okara,2010-01-01,36.0,58.92
+Punjab,Okara,2012-01-01,29.0,58.65
+Punjab,Okara,2014-01-01,28.0,56.41
+Punjab,Pakpattan,2004-01-01,57.0,55.28
+Punjab,Pakpattan,2006-01-01,53.0,61.09
+Punjab,Pakpattan,2008-01-01,49.0,61.82
+Punjab,Pakpattan,2010-01-01,40.0,68.84
+Punjab,Pakpattan,2012-01-01,34.0,60.35
+Punjab,Pakpattan,2014-01-01,30.0,63.19
+Punjab,Rahim Yar Khan,2004-01-01,62.0,60.92
+Punjab,Rahim Yar Khan,2006-01-01,63.0,54.3
+Punjab,Rahim Yar Khan,2008-01-01,55.0,56.85
+Punjab,Rahim Yar Khan,2010-01-01,46.0,65.09
+Punjab,Rahim Yar Khan,2012-01-01,43.0,60.95
+Punjab,Rahim Yar Khan,2014-01-01,39.0,61.27
+Punjab,Rajanpur,2004-01-01,64.0,58.91
+Punjab,Rajanpur,2006-01-01,66.0,73.37
+Punjab,Rajanpur,2008-01-01,67.0,67.15
+Punjab,Rajanpur,2010-01-01,55.0,65.04
+Punjab,Rajanpur,2012-01-01,49.0,60.13
+Punjab,Rajanpur,2014-01-01,41.0,68.82
+Punjab,Rawalpindi,2004-01-01,33.0,38.6
+Punjab,Rawalpindi,2006-01-01,22.0,39.29
+Punjab,Rawalpindi,2008-01-01,16.0,40.03
+Punjab,Rawalpindi,2010-01-01,18.0,39.92
+Punjab,Rawalpindi,2012-01-01,15.0,39.95
+Punjab,Rawalpindi,2014-01-01,11.0,39.02
+Punjab,Sahiwal,2004-01-01,50.0,53.68
+Punjab,Sahiwal,2006-01-01,49.0,55.24
+Punjab,Sahiwal,2008-01-01,45.0,57.16
+Punjab,Sahiwal,2010-01-01,32.0,60.67
+Punjab,Sahiwal,2012-01-01,28.0,59.75
+Punjab,Sahiwal,2014-01-01,25.0,55.73
+Punjab,Sargodha,2004-01-01,51.0,39.97
+Punjab,Sargodha,2006-01-01,42.0,42.2
+Punjab,Sargodha,2008-01-01,31.0,41.4
+Punjab,Sargodha,2010-01-01,29.0,42.88
+Punjab,Sargodha,2012-01-01,24.0,40.66
+Punjab,Sargodha,2014-01-01,22.0,42.18
+Punjab,Sheikhupura,2004-01-01,52.0,48.58
+Punjab,Sheikhupura,2006-01-01,47.0,47.66
+Punjab,Sheikhupura,2008-01-01,39.0,47.17
+Punjab,Sheikhupura,2010-01-01,31.0,50.28
+Punjab,Sheikhupura,2012-01-01,25.0,47.35
+Punjab,Sheikhupura,2014-01-01,23.0,44.8
+Punjab,Sialkot,2004-01-01,43.0,45.81
+Punjab,Sialkot,2006-01-01,37.0,44.16
+Punjab,Sialkot,2008-01-01,32.0,44.92
+Punjab,Sialkot,2010-01-01,25.0,48.67
+Punjab,Sialkot,2012-01-01,18.0,43.77
+Punjab,Sialkot,2014-01-01,17.0,44.91
+Punjab,Toba Tek Singh,2004-01-01,49.0,60.45
+Punjab,Toba Tek Singh,2006-01-01,44.0,44.12
+Punjab,Toba Tek Singh,2008-01-01,35.0,52.49
+Punjab,Toba Tek Singh,2010-01-01,27.0,47.31
+Punjab,Toba Tek Singh,2012-01-01,24.0,53.5
+Punjab,Toba Tek Singh,2014-01-01,21.0,51.65
+Punjab,Vehari,2004-01-01,58.0,59.4
+Punjab,Vehari,2006-01-01,56.0,53.43
+Punjab,Vehari,2008-01-01,49.0,52.67
+Punjab,Vehari,2010-01-01,37.0,56.11
+Punjab,Vehari,2012-01-01,37.0,60.35
+Punjab,Vehari,2014-01-01,31.0,62.0
+Sindh,Badin,2004-01-01,47.0,47.23
+Sindh,Badin,2006-01-01,66.0,55.71
+Sindh,Badin,2008-01-01,56.0,51.66
+Sindh,Badin,2010-01-01,49.0,48.8
+Sindh,Badin,2012-01-01,50.0,62.24
+Sindh,Badin,2014-01-01,47.0,61.37
+Sindh,Dadu,2004-01-01,52.0,45.07
+Sindh,Dadu,2006-01-01,61.0,48.22
+Sindh,Dadu,2008-01-01,48.0,42.44
+Sindh,Dadu,2010-01-01,36.0,47.0
+Sindh,Dadu,2012-01-01,44.0,45.0
+Sindh,Dadu,2014-01-01,36.0,51.01
+Sindh,Ghotki,2004-01-01,45.0,49.08
+Sindh,Ghotki,2006-01-01,61.0,48.19
+Sindh,Ghotki,2008-01-01,55.0,52.5
+Sindh,Ghotki,2010-01-01,41.0,54.14
+Sindh,Ghotki,2012-01-01,51.0,54.12
+Sindh,Ghotki,2014-01-01,46.0,56.74
+Sindh,Hyderabad,2004-01-01,41.0,44.34
+Sindh,Hyderabad,2006-01-01,50.0,46.88
+Sindh,Hyderabad,2008-01-01,30.0,42.11
+Sindh,Hyderabad,2010-01-01,26.0,46.57
+Sindh,Hyderabad,2012-01-01,33.0,50.11
+Sindh,Hyderabad,2014-01-01,28.0,49.72
+Sindh,Jacobabad,2004-01-01,52.0,63.56
+Sindh,Jacobabad,2006-01-01,67.0,71.58
+Sindh,Jacobabad,2008-01-01,58.0,57.69
+Sindh,Jacobabad,2010-01-01,47.0,50.63
+Sindh,Jacobabad,2012-01-01,49.0,52.32
+Sindh,Jacobabad,2014-01-01,48.0,58.73
+Sindh,Jamshoro,2004-01-01,52.0,45.07
+Sindh,Jamshoro,2006-01-01,61.0,48.22
+Sindh,Jamshoro,2008-01-01,53.0,45.93
+Sindh,Jamshoro,2010-01-01,43.0,47.63
+Sindh,Jamshoro,2012-01-01,46.0,48.97
+Sindh,Jamshoro,2014-01-01,42.0,49.58
+Sindh,Karachi City,2004-01-01,28.0,43.08
+Sindh,Karachi City,2006-01-01,23.0,43.19
+Sindh,Karachi City,2008-01-01,24.0,42.95
+Sindh,Karachi City,2010-01-01,21.0,43.5
+Sindh,Karachi City,2012-01-01,22.0,42.79
+Sindh,Karachi City,2014-01-01,17.0,43.8
+Sindh,Kashmore,2004-01-01,52.0,63.56
+Sindh,Kashmore,2006-01-01,67.0,71.58
+Sindh,Kashmore,2008-01-01,53.0,47.73
+Sindh,Kashmore,2010-01-01,42.0,52.91
+Sindh,Kashmore,2012-01-01,52.0,54.8
+Sindh,Kashmore,2014-01-01,48.0,61.21
+Sindh,Khairpur,2004-01-01,53.0,49.3
+Sindh,Khairpur,2006-01-01,58.0,46.81
+Sindh,Khairpur,2008-01-01,51.0,45.53
+Sindh,Khairpur,2010-01-01,42.0,51.33
+Sindh,Khairpur,2012-01-01,48.0,50.0
+Sindh,Khairpur,2014-01-01,42.0,44.83
+Sindh,Larkana,2004-01-01,55.0,49.21
+Sindh,Larkana,2006-01-01,68.0,48.39
+Sindh,Larkana,2008-01-01,49.0,46.94
+Sindh,Larkana,2010-01-01,41.0,44.47
+Sindh,Larkana,2012-01-01,47.0,44.22
+Sindh,Larkana,2014-01-01,35.0,44.89
+Sindh,Matiari,2004-01-01,41.0,44.34
+Sindh,Matiari,2006-01-01,50.0,46.88
+Sindh,Matiari,2008-01-01,48.0,49.86
+Sindh,Matiari,2010-01-01,40.0,49.83
+Sindh,Matiari,2012-01-01,43.0,58.7
+Sindh,Matiari,2014-01-01,41.0,56.21
+Sindh,Mirpur Khas,2004-01-01,43.0,50.22
+Sindh,Mirpur Khas,2006-01-01,55.0,62.64
+Sindh,Mirpur Khas,2008-01-01,55.0,70.11
+Sindh,Mirpur Khas,2010-01-01,40.0,55.08
+Sindh,Mirpur Khas,2012-01-01,43.0,63.98
+Sindh,Mirpur Khas,2014-01-01,41.0,65.62
+Sindh,Naushahro Feroze,2004-01-01,52.0,43.06
+Sindh,Naushahro Feroze,2006-01-01,58.0,44.6
+Sindh,Naushahro Feroze,2008-01-01,38.0,43.45
+Sindh,Naushahro Feroze,2010-01-01,39.0,46.24
+Sindh,Naushahro Feroze,2012-01-01,46.0,48.28
+Sindh,Naushahro Feroze,2014-01-01,33.0,46.89
+Sindh,Qambar Shahdadkot,2004-01-01,55.0,49.21
+Sindh,Qambar Shahdadkot,2006-01-01,68.0,48.39
+Sindh,Qambar Shahdadkot,2008-01-01,58.0,50.14
+Sindh,Qambar Shahdadkot,2010-01-01,45.0,45.76
+Sindh,Qambar Shahdadkot,2012-01-01,52.0,49.64
+Sindh,Qambar Shahdadkot,2014-01-01,48.0,55.65
+Sindh,Sanghar,2004-01-01,45.0,53.94
+Sindh,Sanghar,2006-01-01,57.0,54.94
+Sindh,Sanghar,2008-01-01,50.0,59.72
+Sindh,Sanghar,2010-01-01,41.0,58.67
+Sindh,Sanghar,2012-01-01,44.0,55.88
+Sindh,Sanghar,2014-01-01,44.0,53.12
+Sindh,Shaheed Benazirabad,2004-01-01,50.0,52.49
+Sindh,Shaheed Benazirabad,2006-01-01,56.0,52.91
+Sindh,Shaheed Benazirabad,2008-01-01,50.0,54.13
+Sindh,Shaheed Benazirabad,2010-01-01,40.0,53.79
+Sindh,Shaheed Benazirabad,2012-01-01,45.0,56.93
+Sindh,Shaheed Benazirabad,2014-01-01,41.0,51.11
+Sindh,Shikarpur,2004-01-01,51.0,44.1
+Sindh,Shikarpur,2006-01-01,70.0,47.74
+Sindh,Shikarpur,2008-01-01,51.0,49.19
+Sindh,Shikarpur,2010-01-01,42.0,56.59
+Sindh,Shikarpur,2012-01-01,51.0,57.71
+Sindh,Shikarpur,2014-01-01,44.0,59.84
+Sindh,Sujawal,2004-01-01,51.0,49.32
+Sindh,Sujawal,2006-01-01,59.0,50.5
+Sindh,Sujawal,2008-01-01,57.0,52.87
+Sindh,Sujawal,2010-01-01,50.0,49.07
+Sindh,Sujawal,2012-01-01,47.0,47.16
+Sindh,Sujawal,2014-01-01,52.0,48.22
+Sindh,Sukkur,2004-01-01,48.0,45.01
+Sindh,Sukkur,2006-01-01,54.0,45.05
+Sindh,Sukkur,2008-01-01,48.0,50.02
+Sindh,Sukkur,2010-01-01,37.0,47.02
+Sindh,Sukkur,2012-01-01,43.0,49.54
+Sindh,Sukkur,2014-01-01,36.0,47.5
+Sindh,Tando Allah Yar,2004-01-01,41.0,44.34
+Sindh,Tando Allah Yar,2006-01-01,50.0,46.88
+Sindh,Tando Allah Yar,2008-01-01,48.0,46.84
+Sindh,Tando Allah Yar,2010-01-01,44.0,44.78
+Sindh,Tando Allah Yar,2012-01-01,47.0,60.4
+Sindh,Tando Allah Yar,2014-01-01,46.0,58.98
+Sindh,Tando Muhammad Khan,2004-01-01,41.0,44.34
+Sindh,Tando Muhammad Khan,2006-01-01,50.0,46.88
+Sindh,Tando Muhammad Khan,2008-01-01,56.0,50.0
+Sindh,Tando Muhammad Khan,2010-01-01,50.0,49.88
+Sindh,Tando Muhammad Khan,2012-01-01,49.0,55.32
+Sindh,Tando Muhammad Khan,2014-01-01,49.0,62.11
+Sindh,Tharparkar,2004-01-01,45.0,48.68
+Sindh,Tharparkar,2006-01-01,58.0,57.14
+Sindh,Tharparkar,2008-01-01,60.0,51.65
+Sindh,Tharparkar,2010-01-01,51.0,54.7
+Sindh,Tharparkar,2012-01-01,45.0,59.06
+Sindh,Tharparkar,2014-01-01,51.0,65.78
+Sindh,Thatta,2004-01-01,51.0,49.32
+Sindh,Thatta,2006-01-01,59.0,50.5
+Sindh,Thatta,2008-01-01,57.0,52.87
+Sindh,Thatta,2010-01-01,50.0,49.07
+Sindh,Thatta,2012-01-01,47.0,47.16
+Sindh,Thatta,2014-01-01,51.0,48.05
+Sindh,Umerkot,2004-01-01,43.0,50.22
+Sindh,Umerkot,2006-01-01,55.0,62.64
+Sindh,Umerkot,2008-01-01,55.0,70.11
+Sindh,Umerkot,2010-01-01,46.0,49.43
+Sindh,Umerkot,2012-01-01,47.0,59.88
+Sindh,Umerkot,2014-01-01,46.0,73.75
