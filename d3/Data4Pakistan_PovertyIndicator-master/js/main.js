@@ -143,6 +143,8 @@ function updateChart(someData, xAxisLabel, time) {
     })
     .entries(someData[0]);
 
+  console.log(dataAdultLit);
+  
   let dataMobileOwn = d3
     .nest()
     .key(function (d) {
