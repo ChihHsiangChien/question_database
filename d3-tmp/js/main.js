@@ -26,7 +26,7 @@ let questions = [
 let allData = [];
 let subject = 0;
 let time = 0;
-let year = "all";
+let year = 110 + time;
 
 let intervalBeat;
 
@@ -125,42 +125,48 @@ function updateChart(someData, subject, time, year) {
 
   let dataNature = d3
     .nest()
+    .key(function (d) {
+      return d["year"];
+    })
     .entries(someData[0]);
 
   let dataSoceity = d3
     .nest()
+    .key(function (d) {
+      return d["year"];
+    })
     .entries(someData[1]);
 
   let dataMath = d3
     .nest()
+    .key(function (d) {
+      return d["year"];
+    })
     .entries(someData[2]);
 
   let dataChinese = d3
     .nest()
+    .key(function (d) {
+      return d["year"];
+    })
     .entries(someData[3]);
 
   let dataEnglish = d3
     .nest()
+    .key(function (d) {
+      return d["year"];
+    })
     .entries(someData[4]);
     
     
   questionsData = [dataNature,dataSoceity,dataMath,dataChinese,dataEnglish];
-  
-  let filteredData = questionsData[subject]
 
-  filteredData =
-    year === "all"
-    ? filteredData
-    : filteredData.filter( function(ele){
-       return ele.year == year
-    });
-
-
-  //time = year - 104;
+  time = year - 104;
 
   
-  //let filteredData = questionsData[subject][time]["values"];
-  
+  let filteredData = questionsData[subject][time]["values"];
+
+
 
   timeText.text( 104 + time + "年度" );
 
@@ -264,7 +270,13 @@ function updateChart(someData, subject, time, year) {
       return y(d["dis"]);
     })
     .attr("cx", function (d) {
-      return x(d["pass"] );
+      //OUTS: Why is this resulting in errors??
+      // console.log(x(d["Households' mobile phone ownership (% of population)"]));
+
+      return x(
+        d["pass"] 
+
+      );
     })
     .attr("r", 5)
     .on("mouseover", tipMouseover)
