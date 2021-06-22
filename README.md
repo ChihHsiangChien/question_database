@@ -1,7 +1,7 @@
 # question_database
 ## 生物科的國中教育會考和基本學力測驗題庫
 ### [章節與出處分析](https://chihhsiangchien.github.io/question_database/統計/統計.html)
-### [依章節主題區分的生物題庫](https://chihhsiangchien.github.io/question_database/生物題庫.html)
+### [依章節主題區分的生物題庫](https://chihhsiangchien.github.io/question_database/生物題庫_概念.html)
 
 
 ### [依年度區分的生物題庫](https://chihhsiangchien.github.io/question_database/生物題庫_年度.html)
@@ -10,7 +10,6 @@
 ### [生物科鑑別度](https://chihhsiangchien.github.io/question_database/統計/統計_生物鑑別度.html)
 ### [生物科通過率](https://chihhsiangchien.github.io/question_database/統計/統計_生物通過率.html)
 
-### [自然科通過率和鑑別度D3](https://chihhsiangchien.github.io/question_database/nature.html)
 
 ### [各科通過率和鑑別度和題目檢視D3](https://chihhsiangchien.github.io/question_database/d3/index.html)
 
