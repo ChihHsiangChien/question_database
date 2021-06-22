@@ -19,14 +19,14 @@
     <!-- Following this: https://www.d3-graph-gallery.com/graph/boxplot_show_individual_points.html -->
 
     <!-- NAVBAR SECTION -->    
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 
 
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  </div>
-</nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+  </nav>
 <!-- END of NAVBAR SECTION -->
 
     <!-- Bootstrap grid setup -->
@@ -34,60 +34,57 @@
     <div class="container">
       <div class="row">
         <div class="col">
-        <p>
-        <h3>
-          會考
-        </h3>
-        </p>
-        <p>滑鼠移動到資料點上，下方會呈現題目</p>
+          <p>
+          <h3>
+            歷屆各科國中會考分析
+          </h3>
+          </p>
+          <p>滑鼠移動到資料點上，下方會呈現題目</p>
 
-      <h6>科目 
-        <select id = "subjectChoice" input="dropdown">        
-        <option value="nature">自然</option>
-        <option value="soceity">社會</option>
-        <option value="math">數學</option>
-        <option value="chinese">國文</option>
-        <option value="english">英語</option>
-        
-      </select> 
-      
-      <select id ="yearChoice" input="dropdown">
-        <option value="全部">全部</option> 
-        <option value="110">110</option>
-        <option value="109">109</option>
-        <option value="108">108</option>
-        <option value="107">107</option>
-        <option value="106">106</option>
-        <option value="105">105</option>
-        <option value="104">104</option>          
-                                               
+          <h6>科目
+            <select id = "subjectChoice" input="dropdown">        
+              <option value="nature">自然</option>
+              <option value="soceity">社會</option>
+              <option value="math">數學</option>
+              <option value="chinese">國文</option>
+              <option value="english">英語</option>
+          
+            </select> 
        
-      </select>
-      年度
-      </h6>
-    </div>
- 
-      
-      
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <i class="far fa-play-circle fa-2x" id = "play"></i>
-        <i class="far fa-pause-circle fa-2x" id = "pause"></i>
+            <select id ="yearChoice" input="dropdown">
+              <option value="全部">全部</option> 
+              <option value="110">110</option>
+              <option value="109">109</option>
+              <option value="108">108</option>
+              <option value="107">107</option>
+              <option value="106">106</option>
+              <option value="105">105</option>
+              <option value="104">104</option>          
+            </select>
+          年度</h6>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-8">
-        <div id="my_dataviz"></div>
-      </div>
-      </div>
-
-      <!-- Beginning of footer -->
-     <div id="vis-container"></div>
       <div class="row">
-        <div class="col">
+        <div class="col-4">
+          <i class="far fa-play-circle fa-2x" id = "play"></i>
+          <i class="far fa-pause-circle fa-2x" id = "pause"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <div id="my_dataviz">
 
-
+          </div>
+        </div>
+        
+      </div>
+      <!-- Beginning of footer -->
+      <div class="row">
+        <div class="col-8"  style="width:100%; height:400px; border:3px #cccccc dashed;" >
+          <!-- 題目呈現區 -->
+          <div id="vis-container"  >
+          </div>
+        </div>
       </div>
       <!-- End of footer -->
     </div>
