@@ -86,6 +86,9 @@ $("#yearChoice").on("change", function () {
   year =
     $("#yearChoice").val() === "全部"
       ? "全部"
+      
+      : $("#yearChoice").val() === "111"
+      ? "111"
       : $("#yearChoice").val() === "110"
       ? "110"
       : $("#yearChoice").val() === "109"
@@ -245,6 +248,7 @@ function updateChart(someData, subject, year) {
   let color = d3
     .scaleOrdinal()
     .domain([
+      "111",    
       "110",
       "109",
       "108",
