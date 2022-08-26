@@ -257,7 +257,7 @@ function updateChart(someData, subject, year) {
       "105",
       "104"                 
     ])
-    .range(["#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999"]);
+    .range(["#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999", "#005599"]);
 
   // JOIN new data with old elements.
   var circles = svg.selectAll("circle").data(filteredData, function (d) {
