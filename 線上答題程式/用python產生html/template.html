@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>答題程式</title>
+  <style>
+    /* 定義答題結果的樣式 */
+    .correct {
+        color: green;
+    }
+    .incorrect {
+        color: red;
+    }
+    /* 定義答錯時題幹的樣式 */
+    .incorrect div {
+        background-color: red;
+    }
+  </style>
+    
+</head>
+<body>
+    <h1>答題程式</h1>
+    <form>
+        {% for question in questions %}
+        
+        <!-- 將題幹的 div 元素的 class 設置為「incorrect」 -->
+        <div class="incorrect">            
+        
+            <!-- 顯示題目的標題和圖片 -->
+            <h2>{{ question.title }}</h2>
+            {% if question.title_image %}
+                <img src="{{ question.title_image }}" alt="{{ question.title }}">
+            {% endif %}
+            <!-- 顯示題目的選項 -->
+            <ul>
+                <li><input type="radio" name="{{ question.id }}" value="A"> {{ question.option_a }}</li>
+                <li><input type="radio" name="{{ question.id }}" value="B"> {{ question.option_b }}</li>
+                <li><input type="radio" name="{{ question.id }}" value="C"> {{ question.option_c }}</li>
+                <li><input type="radio" name="{{ question.id }}" value="D"> {{ question.option_d }}</li>
+            </ul>
+            <!-- 顯示題目的答案 -->
+            <p>正確答案：{{ question.answer }}</p>
+        </div>
+        {% endfor %}
+        <!-- 顯示答題結果 -->
+        <p>您答對了 <span id="correct-count">0</span> 題。</p>
+        <p>您答錯了 <span id="incorrect-count">0</span> 題。</p>
+    </form>
+    <script>
+      function random_sort(a, b) {
+          // 生成一個隨機的浮點數
+          var r = Math.random();
+          // 如果隨機數小於 0.5，則返回 -1，使 a 在 b 的前面
+          if (r < 0.5) {
+              return -1;
+          }
+          // 否則返回 1，使 b 在 a 的前面
+          else {
+              return 1;
+          }
+      }
+
+      // 定義一個函數來檢查用戶的答案是否正確
+      function check_answers() {
+        // 初始化答對和答錯的題數
+        var correct_count = 0;
+        var incorrect_count = 0;
+        // 遍歷所有的題目
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          // 檢查用戶選擇的答案是否正確
+          var user_answer = document.querySelector('input[name="' + question.id + '"]:checked').value;
+          if (user_answer === question.answer) {
+            // 答對了，將答對的題數加一
+            correct_count += 1;
+          } else {
+            // 答錯了，將答錯的題數加一
+            incorrect_count += 1;
+            // 將答錯的題目的 div 元素的 class 設置為「incorrect」
+            document.querySelector('#' + question.id).classList.add('incorrect');
+          }
+        }
+        // 更新答題結果
+        document.querySelector('#correct-count').innerHTML = correct_count;
+        document.querySelector('#incorrect-count').innerHTML = incorrect_count;
+      }
+      // 當用戶點擊提交按鈕時檢查答案
+      document.querySelector('button').addEventListener('click', check_answers);
+    </script>
+  </body>
+</html>

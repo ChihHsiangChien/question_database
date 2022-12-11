@@ -1,0 +1,61 @@
+/* 每個題目的 div 元素的樣式 */
+.question {
+  border: 2px solid rgb(46, 46, 46);
+  background-color: rgb(224, 224, 224);
+  /* 將題目的文字顏色設置為深藍色 */
+  color: rgb(0, 0, 0);
+  
+  /* 將題目的文字大小設置為 18px */
+  font-size: 14px;  
+
+  /* 將題目的上下左右 margin 設置為 10px */
+  margin: 20px;
+
+  width: 80%;
+
+}
+
+/*檢查作答情形的div */
+.response {
+  border: 2px solid rgb(46, 46, 46);
+  background-color: rgb(162, 229, 254);
+
+  /* 設置文字大小 */
+  font-size: 14px;  
+
+  /* 設置上下左右 margin  */
+  margin: 10px;
+
+  width: 80%;
+}
+
+/* 定義答題結果的樣式 */
+/*
+.correct {
+  background-color: rgb(212, 250, 212);
+}
+*/
+div .correct {
+  background-color: rgb(212, 250, 212);
+}
+
+div .incorrect{
+  background-color: rgb(255, 180, 180);
+}
+
+
+/* 定義答錯時題幹的樣式 */
+/*.incorrect div {
+    color: rgb(60, 32, 198);
+    background-color: rgb(252, 210, 210);
+    border: 1px solid red;
+
+}
+*/
+/*
+.incorrect {
+  background-color: red;
+}
+*/
+
+
