@@ -335,6 +335,7 @@ function renderHtml(questions){
   for (var i = 0; i < questions.length; i++) {
     var question = questions[i].question;
     var image1   = questions[i].image1;
+    var image2   = questions[i].image2;    
     var options  = questions[i].options;
     var answer   = questions[i].answer;
     var source   = questions[i].source;
@@ -363,22 +364,33 @@ function renderHtml(questions){
     questionDiv.innerHTML += question ;
 
     //放入出處
-    questionDiv.innerHTML += '(' + source;
+    questionDiv.innerHTML += '<br>【' + source;
 
     // 檢查是否有通過率和鑑別度的資料，如果有就放進去
     if(correctRate != "" && discriminant != ""){
       //放入通過率
-      questionDiv.innerHTML += ', 通過率:' + correctRate + ',';
+      questionDiv.innerHTML += ', 通過率:' + correctRate ;
       //放入鑑別度
-      questionDiv.innerHTML += ', 鑑別度:' + discriminant + ')<br>';
+      questionDiv.innerHTML += ', 鑑別度:' + discriminant + '】<br>';
     } else{
-      questionDiv.innerHTML += ')<br>';
+      questionDiv.innerHTML += '】<br>';
     }
 
     
-    //如果有題幹圖片，則放入
+    //如果有題幹圖片image1，則放入
     if (image1 != "") {
       var imgPath = "../image/" + image1 +".jpeg";
+
+      var img = document.createElement("img");
+      img.src = imgPath;
+      img.width = 300; // 設置圖像寬度為 300 像素
+      questionDiv.appendChild(img);
+      questionDiv.innerHTML += '<br>';
+    }
+
+    //如果有題幹圖片image2，則放入
+    if (image2 != "") {
+      var imgPath = "../image/" + image2 +".jpeg";
 
       var img = document.createElement("img");
       img.src = imgPath;
@@ -447,6 +459,47 @@ function renderHtml(questions){
       questionDiv.appendChild(br);
 
     }
+    var br = document.createElement('br');    
+
+    // 每題下方增加檢查的按鈕。目前按鈕的事件其實只做了檢查是否有沒作答的
+    // 因為同時執行了checkAnswer那個函數
+    var myButton = document.createElement("button");
+    myButton.id = i;
+    myButton.value = answer; // 把答案藏在button的value裡
+    myButton.innerHTML = "Check";
+    myButton.onclick = function() {
+      answer = this.value;
+      var ifAnswered = false;  //是否未作答
+      
+      // 找到這題所有選項
+      var radioInputs = document.querySelectorAll("input[type='radio'][id^= '" + this.id +"_']");      
+      radioInputs.forEach(function(radioInput) {        
+        if (radioInput.checked) {
+          ifAnswered = true;
+        } 
+      });
+      
+      var spans = document.querySelectorAll("span[id='"+ this.id + "']");      
+      if(!ifAnswered){
+        spans.forEach(function(span) {
+          span.innerHTML = "  未作答";
+        });
+      } else {
+        spans.forEach(function(span) {
+          span.innerHTML = "";
+        });
+      }      
+        
+      //console.log(this.id);
+    }
+    
+
+    questionDiv.appendChild(br);    
+    questionDiv.appendChild(myButton);
+    var span = document.createElement("span");
+    span.id = i;
+    questionDiv.appendChild(span);
+
 
     // 在這題的末尾添加空白行
     var br = document.createElement('br');
