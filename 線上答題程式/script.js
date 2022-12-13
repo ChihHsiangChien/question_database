@@ -74,19 +74,39 @@ function createChapter(questions) {
     var question = question.question;
 
     // 如果章物件不存在，則創建一個新的章物件
+
+    //if (typeof chapter !== 'undefined'){
+    //}
     if (!chapters[chapter]) {
       chapters[chapter] = {};
     }
 
+
+    /*
+    if (typeof chapter !== 'undefined') {
+      // 如果章物件不存在，則創建一個新的章物件
+      if (!chapters[chapter]) {
+        chapters[chapter] = {};
+        console.log(chapter);
+      }
+    }
+    */
+    
+
+      
     // 在節物件裡增加一個叫做「節」的物件
     if (!chapters[chapter]["節"]) {
       chapters[chapter]["節"] = {};
     }
+    
 
     // 如果節物件不存在，則創建一個新的節物件
+    //if (typeof section !== 'undefined'){
+    //}
     if (!chapters[chapter][section]) {
       chapters[chapter][section] = {};
     }
+
 
     // 在概念物件裡增加一個叫做「概念」的物件
     if (!chapters[chapter][section]["概念"]) {
@@ -94,9 +114,12 @@ function createChapter(questions) {
     }
 
     // 如果概念物件不存在，則創建一個新的概念物件
+    //if (typeof concept !== 'undefined'){    
+    //}
     if (!chapters[chapter][section][concept]) {
       chapters[chapter][section][concept] = {};
     }
+    
 
     // 向概念物件中添加一個包含題目信息的數組
     // if (!chapters[chapter][section][concept].questions) {
@@ -157,7 +180,7 @@ function createdfilteredQuestions(questions, chapters, sources) {
 
 
   // 將章的值新增到選單中
-  for (var chapter in chapters) {
+  for (var chapter in chapters) {    
     chaptersSelect.add(new Option(chapter));
   }
 
