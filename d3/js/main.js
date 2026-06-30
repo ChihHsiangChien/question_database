@@ -50,15 +50,24 @@ let timeText = svg
 Promise.all(questions).then(function (data) {
   data.forEach(function (eachDataset) {
     eachDataset.forEach(function (d) {
-      //d["question"] = +d["question"];
       d["dis"] = +d["dis"];
       d["pass"] = +d["pass"];      
-      //d["year"] = new Date(d["year"]);
-      
     });
   });
   allData = data;
   updateChart(allData, subject, year);
+}).catch(function (error) {
+  console.error("Error loading CSV files:", error);
+  d3.select("#my_dataviz")
+    .append("div")
+    .attr("class", "alert alert-danger mt-3")
+    .html("<h5>📊 瀏覽器 CORS 安全限制提示</h5>" +
+          "偵測到資料載入失敗。這通常是因為您直接在瀏覽器雙擊開啟了本地 HTML 檔案（<code>file://</code> 協議），瀏覽器出於安全考量阻擋了本地 CSV 檔案的讀取。<br/><br/>" +
+          "<strong>💡 快速解決方案：</strong><br/>" +
+          "1. 在本專案根目錄下啟動一個簡易伺服器：<br/>" +
+          "   <code>python -m http.server 8000</code><br/>" +
+          "2. 在瀏覽器中輸入網址存取：<br/>" +
+          "   <a href='http://localhost:8000/d3/index.html' target='_blank'>http://localhost:8000/d3/index.html</a>");
 });
 
 
@@ -83,32 +92,8 @@ $("#subjectChoice").on("change", function () {
 
 //Add in event listener for year choice.
 $("#yearChoice").on("change", function () {
-  year =
-    $("#yearChoice").val() === "全部"
-      ? "全部"
-      
-      : $("#yearChoice").val() === "111"
-      ? "111"
-      : $("#yearChoice").val() === "110"
-      ? "110"
-      : $("#yearChoice").val() === "109"
-      ? "109"
-      : $("#yearChoice").val() === "108"
-      ? "108"
-      : $("#yearChoice").val() === "107"
-      ? "107"      
-      : $("#yearChoice").val() === "106"
-      ? "106"            
-      : $("#yearChoice").val() === "105"
-      ? "105" 
-      : $("#yearChoice").val() === "104"
-      ? "104"                  
-      : null;
-
-
-
-  updateChart(allData, subject, year) ;
-
+  year = $("#yearChoice").val();
+  updateChart(allData, subject, year);
 });
 
 //Add in event listener for playing
@@ -124,7 +109,7 @@ $("#pause").on("click", function () {
 
 
 function pressPlay() {
-  if (time < 6) {
+  if (time < 11) {
     time += 1;
   } else {
     time = 0;
@@ -133,10 +118,14 @@ function pressPlay() {
   year = 104 + time;
   year = year.toString();
   updateChart(allData, subject, year);
+  $("#yearChoice").val(year);
 }
 
 //Function that builds the right chart depending on user choice on website:
 function updateChart(someData, subject, year) {
+  if (!someData || someData.length === 0) {
+    return;
+  }
   let dataNature = d3
     .nest()
     .entries(someData[0]);
@@ -248,6 +237,10 @@ function updateChart(someData, subject, year) {
   let color = d3
     .scaleOrdinal()
     .domain([
+      "115",
+      "114",
+      "113",
+      "112",
       "111",    
       "110",
       "109",
@@ -257,7 +250,7 @@ function updateChart(someData, subject, year) {
       "105",
       "104"                 
     ])
-    .range(["#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999", "#005599"]);
+    .range(["#EC7063", "#AF7AC5", "#5DADE2", "#48C9B0", "#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999", "#005599"]);
 
   // JOIN new data with old elements.
   var circles = svg.selectAll("circle").data(filteredData, function (d) {

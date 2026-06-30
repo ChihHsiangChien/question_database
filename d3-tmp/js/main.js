@@ -14,20 +14,26 @@ let svg = d3
 
 //Read the data
 let questions = [
-  d3.csv("https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/nature.csv"),
-  d3.csv("https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/society.csv"),
-  d3.csv("https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/math.csv"),  
-  d3.csv("https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/chinese.csv"),
-  d3.csv("https://raw.githubusercontent.com/ChihHsiangChien/question_database/master/csv/english.csv"),
+  d3.csv("../data/nature.csv"),
+  d3.csv("../data/society.csv"),
+  d3.csv("../data/math.csv"),  
+  d3.csv("../data/chinese.csv"),
+  d3.csv("../data/english.csv"),
 
 ];
+
+
+let subjectsArray = [{subject:0 , name: "自然"},
+                     {subject:1 , name: "社會"},
+                     {subject:2 , name: "數學"},
+                     {subject:3 , name: "國文"},
+                     {subject:4 , name: "英語"}]
 
 
 let allData = [];
 let subject = 0;
 let time = 0;
-let year = 110 + time;
-
+let year = "全部";
 let intervalBeat;
 
 //OUTS: add a Year label to svg
@@ -36,22 +42,34 @@ let timeText = svg
   .attr("x", width / 2 -30)
   .attr("y", margin.top + 15) ;
 
+
+
+
+
+//把讀入的放入 allData
 Promise.all(questions).then(function (data) {
   data.forEach(function (eachDataset) {
     eachDataset.forEach(function (d) {
-      //d["question"] = +d["question"];
       d["dis"] = +d["dis"];
       d["pass"] = +d["pass"];      
-      //d["year"] = new Date(d["year"]);
-
     });
   });
-
   allData = data;
-
-
-  updateChart(allData, subject, time, year);
+  updateChart(allData, subject, year);
+}).catch(function (error) {
+  console.error("Error loading CSV files:", error);
+  d3.select("#my_dataviz")
+    .append("div")
+    .attr("class", "alert alert-danger mt-3")
+    .html("<h5>📊 瀏覽器 CORS 安全限制提示</h5>" +
+          "偵測到資料載入失敗。這通常是因為您直接在瀏覽器雙擊開啟了本地 HTML 檔案（<code>file://</code> 協議），瀏覽器出於安全考量阻擋了本地 CSV 檔案的讀取。<br/><br/>" +
+          "<strong>💡 快速解決方案：</strong><br/>" +
+          "1. 在本專案根目錄下啟動一個簡易伺服器：<br/>" +
+          "   <code>python -m http.server 8000</code><br/>" +
+          "2. 在瀏覽器中輸入網址存取：<br/>" +
+          "   <a href='http://localhost:8000/d3/index.html' target='_blank'>http://localhost:8000/d3/index.html</a>");
 });
+
 
 
 
@@ -69,34 +87,13 @@ $("#subjectChoice").on("change", function () {
       : $("#subjectChoice").val() === "english"
       ? 4
       : null;
-  updateChart(allData, subject, time, year);
+  updateChart(allData, subject, year);
 });
 
 //Add in event listener for year choice.
 $("#yearChoice").on("change", function () {
-  year =
-    $("#yearChoice").val() === "all"
-      ? "all"
-      : $("#yearChoice").val() === "110"
-      ? 110
-      : $("#yearChoice").val() === "109"
-      ? 109
-      : $("#yearChoice").val() === "108"
-      ? 108
-      : $("#yearChoice").val() === "107"
-      ? 107      
-      : $("#yearChoice").val() === "106"
-      ? 106            
-      : $("#yearChoice").val() === "105"
-      ? 105 
-      : $("#yearChoice").val() === "104"
-      ? 104                  
-      : null;
-
-
-
-  updateChart(allData, subject, time, year) ;
-
+  year = $("#yearChoice").val();
+  updateChart(allData, subject, year);
 });
 
 //Add in event listener for playing
@@ -109,66 +106,68 @@ $("#pause").on("click", function () {
   clearInterval(intervalBeat);
 });
 
+
+
 function pressPlay() {
-  if (time < 6) {
+  if (time < 11) {
     time += 1;
   } else {
     time = 0;
   }
 
-  year = 104 +time;
-  updateChart(allData, subject, time, year);
+  year = 104 + time;
+  year = year.toString();
+  updateChart(allData, subject, year);
+  $("#yearChoice").val(year);
 }
 
 //Function that builds the right chart depending on user choice on website:
-function updateChart(someData, subject, time, year) {
-
+function updateChart(someData, subject, year) {
+  if (!someData || someData.length === 0) {
+    return;
+  }
   let dataNature = d3
     .nest()
-    .key(function (d) {
-      return d["year"];
-    })
     .entries(someData[0]);
 
   let dataSoceity = d3
     .nest()
-    .key(function (d) {
-      return d["year"];
-    })
     .entries(someData[1]);
 
   let dataMath = d3
     .nest()
-    .key(function (d) {
-      return d["year"];
-    })
     .entries(someData[2]);
 
   let dataChinese = d3
     .nest()
-    .key(function (d) {
-      return d["year"];
-    })
     .entries(someData[3]);
 
   let dataEnglish = d3
     .nest()
-    .key(function (d) {
-      return d["year"];
-    })
     .entries(someData[4]);
     
     
   questionsData = [dataNature,dataSoceity,dataMath,dataChinese,dataEnglish];
+  
+  let filteredData = questionsData[subject]
 
-  time = year - 104;
+  filteredData =
+    year === "全部"
+    ? filteredData
+    : filteredData.filter( function(ele){
+       return ele.year == year
+    });
+
+
+  //time = year - 104;
 
   
-  let filteredData = questionsData[subject][time]["values"];
+  //let filteredData = questionsData[subject][time]["values"];
+  
 
+  subjectName = subjectsArray[subject]["name"];
 
-
-  timeText.text( 104 + time + "年度" );
+  timeText.text( subjectName + "   " + year + "年度" );
 
   // Add X axis
   let x = d3.scaleLinear().domain([0, 1]).range([0, width]);
@@ -238,6 +237,11 @@ function updateChart(someData, subject, time, year) {
   let color = d3
     .scaleOrdinal()
     .domain([
+      "115",
+      "114",
+      "113",
+      "112",
+      "111",    
       "110",
       "109",
       "108",
@@ -246,7 +250,7 @@ function updateChart(someData, subject, time, year) {
       "105",
       "104"                 
     ])
-    .range(["#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999"]);
+    .range(["#EC7063", "#AF7AC5", "#5DADE2", "#48C9B0", "#EDBB99", "#EDE599", "#CBED99", "#A1ED99", "#99EDBB", "#99EDE5", "#009999", "#005599"]);
 
   // JOIN new data with old elements.
   var circles = svg.selectAll("circle").data(filteredData, function (d) {
@@ -270,13 +274,7 @@ function updateChart(someData, subject, time, year) {
       return y(d["dis"]);
     })
     .attr("cx", function (d) {
-      //OUTS: Why is this resulting in errors??
-      // console.log(x(d["Households' mobile phone ownership (% of population)"]));
-
-      return x(
-        d["pass"] 
-
-      );
+      return x(d["pass"] );
     })
     .attr("r", 5)
     .on("mouseover", tipMouseover)
