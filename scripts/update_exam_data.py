@@ -367,41 +367,245 @@ def merge_and_save_data(years):
 def generate_html_reports():
     print("\n[HTML Generation Phase] Regenerating statistics report pages inside '統計/'...")
     os.makedirs('統計', exist_ok=True)
-    
+
     # Load merged master databases
     questions_df = pd.read_csv('data/從pdf直存df.csv')
-    passing_df = pd.read_csv('data/合併後的通過率與鑑別度.csv')
-    
+    passing_df   = pd.read_csv('data/合併後的通過率與鑑別度.csv')
+
     new_df = pd.merge(questions_df, passing_df, on=['年度', '科目', '題號'])
-    
+    # Select columns: 年度(0) 科目(1) 題號(2) 題目(3) 通過率(4) 鑑別度(5)
+    new_df = new_df[['年度', '科目', '題號', '題目', '通過率', '鑑別度']]
+
     subjects = ['國文', '英語聽力', '數學', '英語', '社會', '自然']
-    kinds = ['通過率', '鑑別度']
-    
+
+    PAGE_CSS = """<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans TC',sans-serif;background:#f8fafc;color:#1e293b;padding:24px}
+h2{font-size:1.6rem;font-weight:700;margin-bottom:20px;color:#1e293b}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:20px;
+          background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:14px;padding:16px 20px;
+          box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.ctrl-group{display:flex;flex-direction:column;gap:4px}
+.ctrl-group label{font-size:.78rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
+.ctrl-group select{font-size:.9rem;padding:6px 12px;border-radius:8px;border:1px solid #cbd5e1;
+                   background:#f8fafc;cursor:pointer;transition:border-color .2s}
+.ctrl-group select:hover,.ctrl-group select:focus{border-color:#4f46e5;outline:none}
+#statTable{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;
+           overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+#statTable th{background:#4f46e5;color:#fff;padding:10px 12px;font-size:.85rem;
+              font-weight:600;text-align:left;cursor:pointer;user-select:none;white-space:nowrap}
+#statTable th:hover{background:#4338ca}
+#statTable th .sort-arrow{margin-left:6px;opacity:.6}
+#statTable td{padding:9px 12px;font-size:.85rem;border-bottom:1px solid #f1f5f9;vertical-align:top}
+#statTable tr:last-child td{border-bottom:none}
+#statTable tbody tr:hover{background:#f0f4ff}
+.td-num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.td-question{max-width:480px;word-break:break-all}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;
+           color:#4f46e5;text-decoration:none;margin-bottom:16px}
+.back-link:hover{text-decoration:underline}
+</style>"""
+
+    PAGE_JS = """<script>
+var allRows = [];
+var sortCol = 4;     // default: 通過率 column index
+var sortAsc = false; // default: descending
+
+// col index map: 0=年度 1=科目 2=題號 3=題目 4=通過率 5=鑑別度
+var COL_PASS = 4;
+var COL_DIS  = 5;
+
+function getCellValue(row, colIdx) {
+  var text = row.cells[colIdx].textContent.trim();
+  var num  = parseFloat(text);
+  return isNaN(num) ? text : num;
+}
+
+function renderTable() {
+  var year = document.getElementById('yearFilter').value;
+  var tbody = document.getElementById('statTable').tBodies[0];
+
+  // Filter
+  var visible = allRows.filter(function(r) {
+    var y = r.cells[0].textContent.trim();
+    return year === 'all' || y === year;
+  });
+
+  // Sort
+  visible.sort(function(a, b) {
+    var va = getCellValue(a, sortCol);
+    var vb = getCellValue(b, sortCol);
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  // Re-append
+  tbody.innerHTML = '';
+  visible.forEach(function(r) { tbody.appendChild(r); });
+
+  // Update arrow indicators
+  ['thPass','thDis'].forEach(function(id, i) {
+    var col = i === 0 ? COL_PASS : COL_DIS;
+    var th  = document.getElementById(id);
+    var arrow = th.querySelector('.sort-arrow');
+    if (col === sortCol) {
+      arrow.textContent = sortAsc ? ' ▲' : ' ▼';
+      arrow.style.opacity = '1';
+    } else {
+      arrow.textContent = ' ↕';
+      arrow.style.opacity = '.4';
+    }
+  });
+}
+
+function toggleSort(col) {
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = false;  // default descending when switching column
+  }
+  renderTable();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var tbody = document.getElementById('statTable').tBodies[0];
+  allRows = Array.from(tbody.querySelectorAll('tr'));
+  renderTable();
+});
+</script>"""
+
     for subject in subjects:
-        for kind in kinds:
-            htmlFileName = f'統計/統計_{subject}_{kind}.html'
-            
-            # Filter and sort
-            html_df = new_df[new_df['科目'] == subject]
-            html_df = html_df.sort_values(by=[kind], ascending=False)
-            
-            # Convert to HTML table
-            html_table = html_df.to_html(index=False)
-            
-            with open(htmlFileName, 'w', encoding='utf-8') as myFile:
-                myFile.write('<html>\n')
-                myFile.write('<head>\n')
-                myFile.write('  <meta charset="utf-8">\n')
-                myFile.write(f'  <title>{subject}{kind}</title>\n')
-                myFile.write('</head>\n')
-                myFile.write('<body>\n')
-                myFile.write(f'  <h2>{subject} - {kind} 統計排行</h2>\n')
-                myFile.write(html_table)
-                myFile.write('\n  <hr>\n')
-                myFile.write('  <p style="page-break-after:always"></p>\n')
-                myFile.write('</body>\n')
-                myFile.write('</html>')
-            print(f"  Updated {htmlFileName}")
+        html_file = f'統計/統計_{subject}.html'
+
+        # Get all rows for this subject
+        html_df = new_df[new_df['科目'] == subject].copy()
+
+        if html_df.empty:
+            # Write minimal placeholder page
+            with open(html_file, 'w', encoding='utf-8') as f:
+                f.write(f'<!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8"><title>{subject} 統計</title></head>'
+                        f'<body><h2>{subject} - 目前無資料</h2></body></html>')
+            print(f"  Skipped (no data) {html_file}")
+            continue
+
+        # Get sorted unique years for dropdown
+        years = sorted(html_df['年度'].dropna().unique().astype(int))
+        year_options = '<option value="all">全部</option>\n'
+        for y in years:
+            year_options += f'      <option value="{y}">{y} 學年度</option>\n'
+
+        # Convert to HTML table rows (embed all data sorted by 通過率 desc as default)
+        html_df_sorted = html_df.sort_values(by='通過率', ascending=False)
+        table_html = html_df_sorted.to_html(index=False, table_id='statTable', border=0, classes='dataframe')
+
+        # Inject id on th headers for sort handling – replace via string manipulation
+        table_html = table_html.replace(
+            '<th>通過率</th>',
+            '<th id="thPass" onclick="toggleSort(4)">通過率<span class="sort-arrow"> ▼</span></th>'
+        ).replace(
+            '<th>鑑別度</th>',
+            '<th id="thDis" onclick="toggleSort(5)">鑑別度<span class="sort-arrow"> ↕</span></th>'
+        )
+
+        with open(html_file, 'w', encoding='utf-8') as f:
+            f.write(f'<!DOCTYPE html>\n<html lang="zh-TW">\n<head>\n')
+            f.write(f'  <meta charset="utf-8">\n')
+            f.write(f'  <link rel="preconnect" href="https://fonts.googleapis.com">\n')
+            f.write(f'  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">\n')
+            f.write(f'  <title>{subject} 通過率 &amp; 鑑別度統計</title>\n')
+            f.write(PAGE_CSS)
+            f.write(PAGE_JS)
+            f.write(f'</head>\n<body>\n')
+            f.write(f'  <a class="back-link" href="../index.html">← 返回入口平台</a>\n')
+            f.write(f'  <h2>{subject} — 通過率 &amp; 鑑別度統計排行</h2>\n')
+            f.write(f'  <div class="controls">\n')
+            f.write(f'    <div class="ctrl-group">\n')
+            f.write(f'      <label for="yearFilter">學年度</label>\n')
+            f.write(f'      <select id="yearFilter" onchange="renderTable()">\n      {year_options}      </select>\n')
+            f.write(f'    </div>\n')
+            f.write(f'    <div class="ctrl-group" style="justify-content:flex-end;margin-left:auto;align-self:flex-end;font-size:.82rem;color:#64748b;">\n')
+            f.write(f'      點擊「通過率」或「鑑別度」欄位標題可切換排序方向\n')
+            f.write(f'    </div>\n')
+            f.write(f'  </div>\n')
+            f.write(table_html)
+            f.write(f'\n</body>\n</html>')
+
+        print(f"  Updated {html_file}")
+
+    # Also delete old split files (optional, keep for now to avoid broken links)
+    # They will be replaced once index.html is updated
+
+    # ---- Biology: separate source from data/database.csv ----
+    print("\n  [Biology] Generating 統計/統計_生物.html from data/database.csv ...")
+    try:
+        bio_raw = pd.read_csv('data/database.csv', encoding='utf-8-sig')
+
+        def _extract_year(s):
+            import re as _re
+            if pd.isna(s): return None
+            m = _re.match(r'(\d{3})', str(s))
+            return int(m.group(1)) if m else None
+
+        bio_raw['年度'] = bio_raw['出處'].apply(_extract_year)
+        bio = bio_raw[bio_raw['通過率'].notna()].copy()
+        bio = bio[['年度', '出處', '原題號', '題幹', '通過率', '鑑別度']].copy()
+        bio.columns = ['年度', '出處', '題號', '題幹', '通過率', '鑑別度']
+        bio['年度'] = bio['年度'].astype('Int64')
+        bio = bio.sort_values(by='通過率', ascending=False)
+
+        bio_years = sorted(bio['年度'].dropna().unique())
+        bio_year_opts = '<option value="all">全部</option>\n'
+        for y in bio_years:
+            bio_year_opts += f'      <option value="{y}">{y} 學年度</option>\n'
+
+        bio_table = bio.to_html(index=False, table_id='statTable', border=0, classes='dataframe', na_rep='')
+        bio_table = bio_table.replace(
+            '<th>通過率</th>',
+            '<th id="thPass" onclick="toggleSort(4)">通過率<span class="sort-arrow"> ▼</span></th>'
+        ).replace(
+            '<th>鑑別度</th>',
+            '<th id="thDis" onclick="toggleSort(5)">鑑別度<span class="sort-arrow"> ↕</span></th>'
+        )
+
+        BIO_CSS = PAGE_CSS.replace(
+            'background:#4f46e5', 'background:#059669'
+        ).replace(
+            'background:#4338ca', 'background:#047857'
+        ).replace(
+            'border-color:#4f46e5', 'border-color:#059669'
+        ).replace(
+            'background:#f0f4ff', 'background:#ecfdf5'
+        )
+
+        with open('統計/統計_生物.html', 'w', encoding='utf-8') as f:
+            f.write('<!DOCTYPE html>\n<html lang="zh-TW">\n<head>\n')
+            f.write('  <meta charset="utf-8">\n')
+            f.write('  <link rel="preconnect" href="https://fonts.googleapis.com">\n')
+            f.write('  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">\n')
+            f.write('  <title>生物 通過率 &amp; 鑑別度統計</title>\n')
+            f.write(BIO_CSS)
+            f.write(PAGE_JS)
+            f.write('</head>\n<body>\n')
+            f.write('  <a class="back-link" href="../index.html" style="color:#059669">← 返回入口平台</a>\n')
+            f.write('  <h2>生物 — 通過率 &amp; 鑑別度統計排行</h2>\n')
+            f.write('  <div class="controls">\n')
+            f.write('    <div class="ctrl-group">\n')
+            f.write('      <label for="yearFilter">學年度</label>\n')
+            f.write(f'      <select id="yearFilter" onchange="renderTable()">\n      {bio_year_opts}      </select>\n')
+            f.write('    </div>\n')
+            f.write('    <div class="ctrl-group" style="justify-content:flex-end;margin-left:auto;align-self:flex-end;font-size:.82rem;color:#64748b;">\n')
+            f.write('      點擊「通過率」或「鑑別度」欄位標題可切換排序方向\n')
+            f.write('    </div>\n')
+            f.write('  </div>\n')
+            f.write(bio_table)
+            f.write('\n</body>\n</html>')
+
+        print(f"  Updated 統計/統計_生物.html ({len(bio)} rows)")
+    except Exception as e:
+        print(f"  Warning: Could not generate biology stats: {e}")
+
 
 
 # ----------------- 6. REGENERATE SCATTER PLOT & UPDATE README -----------------

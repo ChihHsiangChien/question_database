@@ -1,11 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
   <meta charset="utf-8">
-  <title>自然鑑別度</title>
+  <title>自然 鑑別度 統計排行</title>
+
+<style>
+body { font-family: sans-serif; padding: 16px; }
+.year-filter { margin-bottom: 12px; }
+.year-filter label { font-weight: bold; margin-right: 8px; }
+.year-filter select { font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 1px solid #ccc; }
+#statTable { border-collapse: collapse; width: 100%; }
+#statTable th, #statTable td { border: 1px solid #ccc; padding: 6px 10px; }
+#statTable thead { background: #f0f4ff; }
+#statTable tbody tr:hover { background: #f9f9f9; }
+</style>
+
+<script>
+function filterYear(){
+  var val = document.getElementById('yearFilter').value;
+  var rows = document.querySelectorAll('#statTable tbody tr');
+  rows.forEach(function(r){
+    var year = r.cells[0].textContent.trim();
+    r.style.display = (val === 'all' || year === val) ? '' : 'none';
+  });
+}
+document.addEventListener('DOMContentLoaded', filterYear);
+</script>
 </head>
 <body>
   <h2>自然 - 鑑別度 統計排行</h2>
-<table border="1" class="dataframe">
+  <div class="year-filter">
+    <label for="yearFilter">選擇學年度：</label>
+    <select id="yearFilter" onchange="filterYear()">
+    <option value="all">全部</option>
+    <option value="104">104 學年度</option>
+    <option value="105">105 學年度</option>
+    <option value="106">106 學年度</option>
+    <option value="107">107 學年度</option>
+    <option value="108">108 學年度</option>
+    <option value="109">109 學年度</option>
+    <option value="110">110 學年度</option>
+    <option value="111">111 學年度</option>
+    <option value="112">112 學年度</option>
+    <option value="113">113 學年度</option>
+    <option value="114">114 學年度</option>
+    <option value="115">115 學年度</option>
+    </select>
+  </div>
+<table class="dataframe" id="statTable">
   <thead>
     <tr style="text-align: right;">
       <th>年度</th>
@@ -5035,7 +5077,5 @@
     </tr>
   </tbody>
 </table>
-  <hr>
-  <p style="page-break-after:always"></p>
 </body>
 </html>

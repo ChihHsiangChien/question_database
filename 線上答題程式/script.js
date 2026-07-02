@@ -463,8 +463,8 @@ function resetScoreboard() {
     var percentText = document.getElementById("scorePercent");
     
     percentText.innerText = "0%";
-    circle.style.background = `radial-gradient(closest-side, #151d31 79%, transparent 80% 100%),
-                                conic-gradient(#6366f1 0%, rgba(255,255,255,0.06) 0)`;
+    circle.style.background = `radial-gradient(closest-side, #ffffff 79%, transparent 80% 100%),
+                                conic-gradient(#4f46e5 0%, rgba(0,0,0,0.05) 0)`;
 }
 
 // Calculate scoreboard stats in real-time
@@ -510,8 +510,8 @@ function updateLiveScoreboard() {
     percentText.innerText = pct + "%";
     
     // Conic gradient mapping
-    circle.style.background = `radial-gradient(closest-side, #151d31 79%, transparent 80% 100%),
-                                conic-gradient(#10b981 ${pct}%, rgba(255,255,255,0.06) ${pct}% 100%)`;
+    circle.style.background = `radial-gradient(closest-side, #ffffff 79%, transparent 80% 100%),
+                                conic-gradient(#10b981 ${pct}%, rgba(0,0,0,0.05) ${pct}% 100%)`;
 }
 
 // Initialize AJAX loading of database.csv
