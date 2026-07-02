@@ -1,13 +1,103 @@
-<meta charset="utf-8">
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>答題程式</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上互動答題測驗 - 生物學科</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回首頁</a>
+        <div class="nav-title"><i class="fa-solid fa-square-poll-horizontal"></i> 生物科線上答題測驗</div>
+        <div class="nav-spacer"></div>
+    </nav>
 
+    <div class="app-container">
+        <!-- Control Panel / Filter Card -->
+        <div class="control-card">
+            <div class="filter-tabs">
+                <button class="tab-btn active" id="tabChapterBtn"><i class="fa-solid fa-sitemap"></i> 依章節概念篩選</button>
+                <button class="tab-btn" id="tabSourceBtn"><i class="fa-solid fa-calendar-days"></i> 依考試年度篩選</button>
+            </div>
+            
+            <div class="filter-inputs">
+                <!-- Chapter Selectors -->
+                <div class="filter-group" id="chapterFilterGroup">
+                    <div class="select-wrapper">
+                        <label for="chaptersSelect">選擇章</label>
+                        <select id="chaptersSelect"></select>
+                    </div>
+                    <div class="select-wrapper">
+                        <label for="sectionsSelect">選擇節</label>
+                        <select id="sectionsSelect"></select>
+                    </div>
+                    <div class="select-wrapper">
+                        <label for="conceptsSelect">選擇概念</label>
+                        <select id="conceptsSelect"></select>
+                    </div>
+                </div>
+
+                <!-- Source Selector -->
+                <div class="filter-group hide" id="sourceFilterGroup">
+                    <div class="select-wrapper">
+                        <label for="sourcesSelect">選擇考試年度 / 出處</label>
+                        <select id="sourcesSelect"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Questions List -->
+            <div class="questions-section">
+                <div class="questions-header">
+                    <div class="questions-count" id="questionsCount">請選擇上方篩選條件以開始測驗</div>
+                </div>
+                <div id="questionsContainer">
+                    <!-- Questions will be dynamically loaded here -->
+                    <div class="empty-state">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <p>請選擇章節或年度來載入會考試題</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scoreboard Sidebar -->
+            <div class="sidebar">
+                <div class="score-card sticky">
+                    <h3 class="score-title"><i class="fa-solid fa-circle-check"></i> 測驗成績看板</h3>
+                    <div class="score-progress">
+                        <div class="progress-circle" id="scoreCircle">
+                            <span class="progress-val" id="scorePercent">0%</span>
+                        </div>
+                    </div>
+                    <div class="score-stats">
+                        <div class="stat-item correct">
+                            <span class="stat-label"><i class="fa-solid fa-check"></i> 答對題數</span>
+                            <span class="stat-val" id="correct-count">0</span>
+                        </div>
+                        <div class="stat-item incorrect">
+                            <span class="stat-label"><i class="fa-solid fa-xmark"></i> 答錯題數</span>
+                            <span class="stat-val" id="incorrect-count">0</span>
+                        </div>
+                        <div class="stat-item unanswered">
+                            <span class="stat-label"><i class="fa-solid fa-pen"></i> 未答題數</span>
+                            <span class="stat-val" id="unAnswered-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-  </body>
-</html>  
+</body>
+</html>
