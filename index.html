@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國中會考與基測題庫統計分析系統 - 入口平台</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 29, 49, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-glow: rgba(99, 102, 241, 0.15);
+            --secondary-glow: rgba(236, 72, 153, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --secondary: #ec4899;
+            --secondary-hover: #db2777;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 20%, var(--primary-glow) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, var(--secondary-glow) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .system-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Grid Main Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .card-header {
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        /* Color variations for icons */
+        .icon-primary {
+            background: rgba(99, 102, 241, 0.1);
+            color: #818cf8;
+        }
+
+        .icon-secondary {
+            background: rgba(236, 72, 153, 0.1);
+            color: #f472b6;
+        }
+
+        .icon-accent {
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .card-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-hover);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Subjects section */
+        .subjects-section {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            padding: 45px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: #818cf8;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .subject-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .subject-card:hover {
+            background: rgba(30, 41, 59, 0.7);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .subject-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subject-bio {
+            color: #34d399;
+        }
+
+        .subject-chinese {
+            color: #f87171;
+        }
+
+        .subject-english {
+            color: #60a5fa;
+        }
+
+        .subject-math {
+            color: #fbbf24;
+        }
+
+        .subject-society {
+            color: #a78bfa;
+        }
+
+        .subject-nature {
+            color: #fb7185;
+        }
+
+        .subject-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .subject-btn {
+            font-size: 0.85rem;
+            padding: 8px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .subject-btn:hover {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
+            color: #a5b4fc;
+        }
+
+        /* Banner Scatter Image */
+        .chart-banner {
+            text-align: center;
+            margin-bottom: 60px;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            position: relative;
+        }
+
+        .chart-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease;
+        }
+
+        .chart-banner:hover img {
+            transform: scale(1.01);
+        }
+
+        .chart-banner-title {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: #a5b4fc;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subjects-section {
+                padding: 25px;
+            }
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header>
+            <div class="system-badge">
+                <i class="fa-solid fa-graduation-cap"></i> 學生與教師的互動學習入口
+            </div>
+            <h1>國中會考與基測題庫統計分析系統</h1>
+            <p class="subtitle">專為提升學習成效與精準教學設計的生物科核心題庫與多學科數據分析平台。您可以利用下方工具進行互動測驗、探索數據指標或查詢學科報表。</p>
+        </header>
+
+        <!-- Main Feature Cards -->
+        <div class="feature-grid">
+
+            <!-- Card 1: Quiz Program -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon icon-secondary">
+                        <i class="fa-solid fa-square-poll-horizontal"></i>
+                    </div>
+                    <h2 class="card-title">線上互動答題測驗</h2>
+                    <p class="card-desc">學生自主複習與檢測的絕佳工具。支援依「章節主題」或「會考年度」篩選試題，提供即時評分、秒答解析與標記錯題的反饋機制。</p>
+                </div>
+                <div class="card-links">
+                    <a href="線上答題程式/答題程式.html" class="btn btn-secondary">
+                        <i class="fa-solid fa-play"></i> 開啟線上測驗
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- Card 3: Biology Database -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon icon-accent">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h2 class="card-title">生物科專屬分類題庫</h2>
+                    <p class="card-desc">以生物學科為核心，整理完整的歷年試題庫。提供依「章節概念細分」與「考試年度排列」的雙排版整理網頁，便於老師下載、列印與教學準備。</p>
+                </div>
+                <div class="card-links">
+                    <a href="生物題庫_概念.html" class="btn btn-accent" style="margin-bottom: 10px;">
+                        <i class="fa-solid fa-sitemap"></i> 依章節概念瀏覽
+                    </a>
+                    <a href="生物題庫_年度.html" class="btn btn-outline">
+                        <i class="fa-solid fa-calendar-days"></i> 依考試年度瀏覽
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="統計/統計.html" class="btn btn-outline" style="padding: 10px 30px;">
+                        <i class="fa-solid fa-list-check"></i> 檢視「歷年章節與出處分析報表」
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Card 2: D3 Visualization -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon icon-primary">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2 class="card-title">D3.js 數據互動探索</h2>
+                <p class="card-desc">結合大數據分析與視覺化技術。展示歷屆會考題目的「通過率」與「鑑別度」散佈分布，支援多學科切換，點擊 Play 即可探索指標的演變動態。</p>
+            </div>
+            <div class="card-links">
+                <a href="d3/index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-circle-nodes"></i> 開啟數據探索平台
+                </a>
+            </div>
+        </div>
+
+        <!-- Subjects Grid Section -->
+        <div class="subjects-section">
+            <h2 class="section-title">
+                <i class="fa-solid fa-database"></i> 歷年各學科指標快速通道
+            </h2>
+            <div class="subject-grid">
+
+                <!-- Biology -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-dna subject-bio"></i> 生物科 (Biology)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_生物通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_生物鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+                <!-- Chinese -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-language subject-chinese"></i> 國文科 (Chinese)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_國文_通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_國文_鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+                <!-- English -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-font subject-english"></i> 英語科 (English)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_英語_通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_英語_鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+                <!-- Math -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-calculator subject-math"></i> 數學科 (Math)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_數學_通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_數學_鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+                <!-- Society -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-earth-asia subject-society"></i> 社會科 (Society)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_社會_通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_社會_鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="subject-card">
+                    <div class="subject-name">
+                        <i class="fa-solid fa-flask-vial subject-nature"></i> 自然科 (Science)
+                    </div>
+                    <div class="subject-links">
+                        <a href="統計/統計_自然_通過率.html" class="subject-btn">通過率排行</a>
+                        <a href="統計/統計_自然_鑑別度.html" class="subject-btn">鑑別度排行</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- Banner Scatter Image Section -->
+        <div class="chart-banner">
+            <img src="103年至115年會考各科通過率與鑑別度.jpg" alt="103年至115年會考各科通過率與鑑別度分布圖">
+            <p class="chart-banner-title">國中教育會考各科通過率與鑑別度之分布趨勢圖 (累計 103 年至 115 年數據)</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 國中會考與基測題庫統計分析系統. 本平台數據皆來自官方公布之會考與基測考古題指標。</p>
+            <p style="margin-top: 8px;">系統管理與開發指引請參閱 <a href="README.md"><i class="fa-solid fa-file-code"></i>
+                    README.md說明檔</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

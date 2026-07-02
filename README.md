@@ -48,7 +48,8 @@
     *   [答題程式.html](./線上答題程式/答題程式.html)：線上測驗主頁面。
     *   [script.js](./線上答題程式/script.js)：解析題庫 CSV，並動態產生下拉選單與測驗卷的邏輯。
     *   [styles.css](./線上答題程式/styles.css)：測驗介面樣式表。
-    *   [用python產生html/generateHtml.py](./線上答題程式/用python產生html/generateHtml.py)：利用 Python 套用範本動態產生單一 HTML 測驗網頁的腳本。
+*   **[`scripts/`](./scripts)**：自動化更新管線工具。
+    *   **[`update_exam_data.py`](./scripts/update_exam_data.py)**：會考數據一鍵更新工具，支援自動下載、PDF解析、樞紐合併、各科資料更新、HTML 統計報表生成、以及散佈圖與 README 自動繪製。
 *   **[`統計/`](./統計)**：存放各科目歷年通過率與鑑別度數據統計分析 HTML 報表。
 *   **Jupyter Notebooks（數據清洗、分析與網頁生成）**：
     *   [0_基測會考處理.ipynb](./0_基測會考處理.ipynb)：前置處理基測與會考的原始題目資料。
@@ -109,3 +110,18 @@ python "線上答題程式/用python產生html/generateHtml.py"
 2. 選擇您想要檢視的學科（國文、英語、數學、社會、自然）與考試年度。
 3. 頁面將呈現一個以「通過率」為 X 軸、「鑑別度」為 Y 軸的散佈圖，將游標移至點上可檢視對應題目詳細資訊。
 4. 點擊 **"Play"** 按鈕可自動動態切換年度，動態播放歷年題目指標的變遷趨勢。
+
+### 4. 一鍵自動化更新歷屆會考題庫與指標數據
+本專案提供了一個一鍵式自動化數據更新管線腳本 **[update_exam_data.py](./scripts/update_exam_data.py)**。當官方公布新的會考年度數據時，您只需執行該腳本即可完成「自動下載 -> PDF題目與統計解析 -> 數據合併 -> 科目拆分 -> 靜態統計 HTML 報表更新 -> D3 散佈圖與 README 重繪」的完整管線流程。
+
+**執行指令**：
+在專案根目錄下執行：
+```bash
+python scripts/update_exam_data.py --years 112 113 114 115
+```
+如果 PDF 檔案已經下載並手動存放在 `會考題目/` 資料夾中，可使用 `--skip-download` 參數跳過下載步驟：
+```bash
+python scripts/update_exam_data.py --years 112 113 114 115 --skip-download
+```
+
+*提示：如果是新增 115 年以後的年度，請記得手動更新 `d3/index.html` 的年度下拉清單，並在 `d3/js/main.js` 中為新年度分配代表顏色。*
