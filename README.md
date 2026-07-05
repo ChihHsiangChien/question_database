@@ -53,7 +53,7 @@
 *   **[`統計/`](./統計)**：存放各科目歷年通過率與鑑別度數據統計分析 HTML 報表。
 *   **Jupyter Notebooks（數據清洗、分析與網頁生成）**：
     *   [0_基測會考處理.ipynb](./0_基測會考處理.ipynb)：前置處理基測與會考的原始題目資料。
-    *   [1_非jpeg的檔案轉jpeg.ipynb](./1_非jpeg的檔案轉jpeg.ipynb)：掃描試題圖檔，並將非 JPEG 格式的圖片自動轉換並標準化為 JPEG。
+    *   [1_非jpg的檔案轉jpg.ipynb](./1_非jpg的檔案轉jpg.ipynb)：掃描試題圖檔，並將非 JPG 格式的圖片自動轉換並標準化為 JPG。
     *   [2_question_analyze_and_creater.ipynb](./2_question_analyze_and_creater.ipynb)：核心資料整理腳本，包括整理圖片資料夾、重新編碼並匯出 `database.csv`，以及自動生成依章節和年度分類的靜態題庫 HTML 網頁。
     *   [B01_讀取考古題PDF.ipynb](./B01_讀取考古題PDF.ipynb)：下載並使用 `pdfplumber` 等工具解析會考 PDF 題目，擷取文字並存入 DataFrame。
     *   [B02_讀取通過率和鑑別度xlsxToCsv.ipynb](./B02_讀取通過率和鑑別度xlsxToCsv.ipynb)：讀取 `會考通過率和鑑別度.xlsx` 並匯出成 CSV。
@@ -88,7 +88,7 @@
 
 ### 1. 執行數據分析與題庫網頁更新
 若要重新處理試題圖檔或更新題庫 HTML 靜態網頁，可使用 Jupyter Notebook 執行以下腳本：
-1. 執行 **[1_非jpeg的檔案轉jpeg.ipynb](./1_非jpeg的檔案轉jpeg.ipynb)** 確保所有試題圖片均為統一的 JPEG 格式。
+1. 執行 **[1_非jpg的檔案轉jpg.ipynb](./1_非jpg的檔案轉jpg.ipynb)** 確保所有試題圖片均為統一的 JPG 格式。
 2. 執行 **[2_question_analyze_and_creater.ipynb](./2_question_analyze_and_creater.ipynb)**：
    * 腳本將會讀取生物科題庫，重新編碼圖檔。
    * 自動生成符合傳統與響應式網頁設計的 [`生物題庫_概念.html`](./生物題庫_概念.html) 與 [`生物題庫_年度.html`](./生物題庫_年度.html)。

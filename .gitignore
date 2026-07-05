@@ -1,0 +1,26 @@
+# Python 虛擬環境
+.venv/
+venv/
+ENV/
+bin/
+lib/
+share/
+include/
+
+# Jupyter Notebook 暫存快取
+.ipynb_checkpoints/
+
+# Python 編譯與快取檔案
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 系統產生的暫存檔 (如 macOS)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

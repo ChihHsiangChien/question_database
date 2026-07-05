@@ -276,12 +276,12 @@ function renderHtml(questions) {
             imgBlock.className = "question-images";
             if (q.image1) {
                 var img = document.createElement("img");
-                img.src = "../image/" + q.image1 + ".jpeg";
+                img.src = "../image/" + q.image1 + ".jpg";
                 imgBlock.appendChild(img);
             }
             if (q.image2) {
                 var img = document.createElement("img");
-                img.src = "../image/" + q.image2 + ".jpeg";
+                img.src = "../image/" + q.image2 + ".jpg";
                 imgBlock.appendChild(img);
             }
             qCard.appendChild(imgBlock);
@@ -317,7 +317,7 @@ function renderHtml(questions) {
             if (opt.image) {
                 var oImg = document.createElement("img");
                 oImg.className = "option-img";
-                oImg.src = "../image/" + opt.image + ".jpeg";
+                oImg.src = "../image/" + opt.image + ".jpg";
                 label.appendChild(oImg);
             }
             
