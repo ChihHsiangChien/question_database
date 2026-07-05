@@ -149,9 +149,12 @@ function setupFilterControls() {
 
     // 1. Populate Chapters
     chaptersSelect.innerHTML = "";
-    for (var ch in chapters) {
+    var sortedChs = Object.keys(chapters).sort(function(a, b) {
+        return a.localeCompare(b, "zh-Hant");
+    });
+    sortedChs.forEach(function(ch) {
         chaptersSelect.add(new Option(ch, ch));
-    }
+    });
     
     // Bind Chapter Change
     chaptersSelect.onchange = function() {
@@ -159,9 +162,12 @@ function setupFilterControls() {
         var sections = chapters[selectedCh] || {};
         
         sectionsSelect.innerHTML = "";
-        for (var sec in sections) {
+        var sortedSecs = Object.keys(sections).sort(function(a, b) {
+            return a.localeCompare(b, "zh-Hant");
+        });
+        sortedSecs.forEach(function(sec) {
             sectionsSelect.add(new Option(sec, sec));
-        }
+        });
         sectionsSelect.onchange();
     };
     
