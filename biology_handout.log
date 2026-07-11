@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2026.2.14)  11 JUL 2026 09:16
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2026.2.14)  11 JUL 2026 09:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1342,7 +1342,7 @@ Package rerunfilecheck Info: File `biology_handout.out' has not changed.
 Here is how much of TeX's memory you used:
  28047 strings out of 475381
  618997 string characters out of 5762518
- 1039114 words of memory out of 5000000
+ 1040114 words of memory out of 5000000
  50583 multiletter control sequences out of 15000+600000
  566252 words of font info for 101 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
